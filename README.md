@@ -28,6 +28,18 @@ Le site sera accessible sur `http://localhost:5173`
 npm run build
 ```
 
+## Déploiement sur GitHub Pages
+
+Le projet est configuré pour se déployer automatiquement sur GitHub Pages via GitHub Actions.
+
+1. Active GitHub Pages dans les paramètres du repository :
+   - Va dans Settings > Pages
+   - Source : sélectionne "GitHub Actions"
+
+2. Le workflow se déclenchera automatiquement à chaque push sur la branche `main`
+
+3. Le site sera disponible sur : `https://TON_USERNAME.github.io/heart-resonance/`
+
 ## Structure du site
 
 - **Maria HUIZAR** : Présentation
