@@ -41,11 +41,26 @@ h1 {
   padding: 0;
 }
 
+.page-fade {
+  animation: pageFade 320ms ease-in-out;
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2.5rem 4rem 2rem 4rem;
+  padding: 1.4rem 3rem 1.2rem 3rem;
   background: none;
   font-family: 'Playfair Display', serif;
   font-size: 1.14rem;
@@ -56,12 +71,19 @@ h1 {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  cursor: pointer;
+}
+.logo-image {
+  height: 7.5rem;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.3));
 }
 .logo-title {
   font-size: 1.5rem;
   font-family: 'Playfair Display', serif;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #c9a35a;
   margin-left: 0;
 }
 .nav-menu {
@@ -87,7 +109,7 @@ h1 {
 
 .banner {
   width: 100vw;
-  min-height: 75vh;
+  min-height: 60vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -108,7 +130,7 @@ h1 {
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 3rem 2rem;
   max-width: 800px;
   margin: 0 auto;
   color: #1a1a1a;
@@ -118,11 +140,14 @@ h1 {
   align-items: center;
   justify-content: center;
 }
+.banner-image {
+  display: none;
+}
 .banner-text h1 {
   font-family: 'Playfair Display', serif;
   font-size: 3.5rem;
   margin-bottom: 1.8rem;
-  color: #1a1a1a;
+  color: #c9a35a;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.2;
@@ -163,6 +188,23 @@ h1 {
   display: flex;
   flex-direction: column;
 }
+.section-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+.section-image {
+  flex: 0 0 300px;
+}
+.section-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.section-text {
+  flex: 1;
+}
 .section-item h3 {
   font-family: 'Playfair Display', serif;
   font-size: 2.2rem;
@@ -179,6 +221,251 @@ h1 {
   line-height: 1.8;
   margin: 0;
   max-width: 100%;
+}
+
+/* Page "Maria HUIZAR" */
+
+.maria-page {
+  background: linear-gradient(180deg, #f7f3ea 0, #ffffff 260px);
+  padding: 3.5rem 2rem 4rem 2rem;
+}
+
+.maria-back {
+  max-width: 1200px;
+  margin: 0 auto 1.5rem auto;
+}
+
+.btn-back-home {
+  background: transparent;
+  border-radius: 999px;
+  border: 1px solid #d0c3a5;
+  padding: 0.55rem 1.4rem;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #6a5d3a;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #fffaf2;
+}
+
+.btn-back-home:hover {
+  background-color: #f1e5cf;
+}
+
+.maria-hero {
+  max-width: 1200px;
+  margin: 0 auto 3rem auto;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+}
+
+.maria-image-wrapper {
+  flex: 0 0 320px;
+}
+
+.maria-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.maria-intro {
+  flex: 1;
+}
+
+.maria-intro h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  margin: 0 0 0.5rem 0;
+  color: #1a1a1a;
+}
+
+.maria-intro h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  margin: 0 0 1.5rem 0;
+  color: #7a815c;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.maria-intro-text {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #4a4a4a;
+  border-left: 3px solid #d2c4a4;
+  padding-left: 1.2rem;
+}
+
+.maria-body {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.maria-content {
+  flex: 2;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.9;
+  color: #3a3a3a;
+}
+
+.maria-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin: 0 0 1rem 0;
+  color: #1a1a1a;
+}
+
+.maria-content p {
+  margin: 0 0 1.3rem 0;
+}
+
+.maria-separator {
+  margin: 2.5rem 0 1.8rem 0;
+  border: none;
+  border-top: 1px solid #e0e0e0;
+}
+
+.maria-disclaimer {
+  font-size: 0.9rem;
+  color: #7a7a7a;
+  font-style: italic;
+}
+
+.maria-aside {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.maria-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 1.5rem 1.6rem;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+}
+
+.maria-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  margin: 0 0 0.8rem 0;
+  color: #1a1a1a;
+}
+
+.maria-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 0.96rem;
+  color: #4a4a4a;
+}
+
+.maria-card li {
+  margin-bottom: 0.4rem;
+}
+
+.maria-card p {
+  margin: 0;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 0.96rem;
+  color: #4a4a4a;
+}
+
+/* Page "Podcast" */
+
+.podcast-page {
+  background: linear-gradient(180deg, #f7f3ea 0, #ffffff 260px);
+  padding: 3.5rem 2rem 4rem 2rem;
+}
+
+.podcast-back {
+  max-width: 1200px;
+  margin: 0 auto 1.5rem auto;
+}
+
+.podcast-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.podcast-main {
+  flex: 2;
+}
+
+.podcast-main h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin: 0 0 1.2rem 0;
+  color: #1a1a1a;
+}
+
+.podcast-intro {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #4a4a4a;
+  margin-bottom: 2rem;
+}
+
+.podcast-content {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.9;
+  color: #3a3a3a;
+}
+
+.podcast-content p {
+  margin: 0 0 1.3rem 0;
+}
+
+.podcast-aside {
+  flex: 1;
+}
+
+.podcast-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 1.8rem 1.8rem;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+  margin-top: 0;
+}
+
+.podcast-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  margin: 0 0 0.9rem 0;
+  color: #1a1a1a;
+}
+
+.podcast-card p {
+  margin: 0;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 0.98rem;
+  color: #4a4a4a;
+}
+
+.podcast-embed {
+  margin-top: 1.2rem;
 }
 
 .newsletter {
@@ -277,18 +564,26 @@ h1 {
 
 @media (max-width: 900px) {
   .header {
-    padding: 2rem 2.5rem 1.5rem 2.5rem;
+    padding: 1.5rem 1.8rem 1.2rem 1.8rem;
     flex-wrap: wrap;
   }
   .nav-menu {
     gap: 2rem;
     font-size: 0.85rem;
   }
+  .logo-image {
+    height: 6rem;
+  }
   .logo-title {
     font-size: 1.3rem;
   }
-  .banner-text {
-    padding: 4rem 2rem;
+  .banner-image {
+    width: 220px;
+    height: 220px;
+    margin-bottom: 2.2rem;
+  }
+  .banner-image img {
+    height: 180px;
   }
   .banner-text h1 {
     font-size: 2.5rem;
@@ -299,8 +594,17 @@ h1 {
   .sections-container {
     gap: 1.5rem;
   }
+  .section-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
   .section-item h3 {
     font-size: 1.8rem;
+  }
+  .section-image {
+    flex: none;
+    width: 100%;
+    max-width: 400px;
   }
   .newsletter {
     padding: 4rem 2rem;
@@ -312,5 +616,41 @@ h1 {
   .newsletter-form {
     max-width: 100%;
     width: 100%;
+  }
+
+  .maria-page {
+    padding: 2.5rem 1.5rem 3.5rem 1.5rem;
+  }
+
+  .maria-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .maria-image-wrapper {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .maria-intro h1 {
+    font-size: 2rem;
+  }
+
+  .maria-intro h2 {
+    font-size: 1.1rem;
+  }
+
+  .podcast-page {
+    padding: 2.5rem 1.5rem 3.5rem 1.5rem;
+  }
+
+  .podcast-layout {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .podcast-main h1 {
+    font-size: 2rem;
   }
 }
