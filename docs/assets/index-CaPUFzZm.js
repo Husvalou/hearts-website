@@ -1,8 +1,4 @@
-import './style.css'
-
-const app = document.querySelector<HTMLDivElement>('#app')!
-
-const headerTemplate = `
+(function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))r(e);new MutationObserver(e=>{for(const s of e)if(s.type==="childList")for(const o of s.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&r(o)}).observe(document,{childList:!0,subtree:!0});function l(e){const s={};return e.integrity&&(s.integrity=e.integrity),e.referrerPolicy&&(s.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?s.credentials="include":e.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function r(e){if(e.ep)return;e.ep=!0;const s=l(e);fetch(e.href,s)}})();const a=document.querySelector("#app"),c=`
   <header class="header">
     <div class="logo-container" data-page="home">
       <img src="./1-removebg-preview.png" alt="Heart Resonance Logo" class="logo-image" />
@@ -20,10 +16,8 @@ const headerTemplate = `
       </ul>
     </nav>
   </header>
-`
-
-const homePageTemplate = `
-  ${headerTemplate}
+`,d=`
+  ${c}
 
   <div class="banner">
     <div class="banner-overlay"></div>
@@ -91,10 +85,8 @@ const homePageTemplate = `
       </div>
     </div>
   </section>
-`
-
-const mariaPageTemplate = `
-  ${headerTemplate}
+`,p=`
+  ${c}
 
   <main class="maria-page">
     <div class="maria-back">
@@ -176,10 +168,8 @@ const mariaPageTemplate = `
       </aside>
     </section>
   </main>
-`
-
-const podcastPageTemplate = `
-  ${headerTemplate}
+`,u=`
+  ${c}
 
   <main class="podcast-page">
     <div class="podcast-back">
@@ -237,55 +227,4 @@ const podcastPageTemplate = `
       </aside>
     </section>
   </main>
-`
-
-type Page = 'home' | 'maria' | 'podcast'
-
-function render(page: Page) {
-  // reset animation
-  app.classList.remove('page-fade')
-  // force reflow to restart animation each time
-  void app.offsetWidth
-
-  if (page === 'home') {
-    app.innerHTML = homePageTemplate
-  } else if (page === 'maria') {
-    app.innerHTML = mariaPageTemplate
-  } else {
-    app.innerHTML = podcastPageTemplate
-  }
-
-  attachNavigation()
-  window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior })
-
-  // run fade-in animation
-  app.classList.add('page-fade')
-}
-
-function attachNavigation() {
-  const logo = document.querySelector<HTMLElement>('.logo-container[data-page="home"]')
-  logo?.addEventListener('click', (event) => {
-    event.preventDefault()
-    render('home')
-  })
-
-  const mariaItem = document.querySelector<HTMLElement>('.nav-item[data-page="maria"]')
-  mariaItem?.addEventListener('click', (event) => {
-    event.preventDefault()
-    render('maria')
-  })
-
-  const backHomeButton = document.querySelector<HTMLElement>('.btn-back-home')
-  backHomeButton?.addEventListener('click', (event) => {
-    event.preventDefault()
-    render('home')
-  })
-
-  const podcastItem = document.querySelector<HTMLElement>('.nav-item[data-page="podcast"]')
-  podcastItem?.addEventListener('click', (event) => {
-    event.preventDefault()
-    render('podcast')
-  })
-}
-
-render('home')
+`;function t(i){a.classList.remove("page-fade"),a.offsetWidth,i==="home"?a.innerHTML=d:i==="maria"?a.innerHTML=p:a.innerHTML=u,m(),window.scrollTo({top:0,behavior:"instant"}),a.classList.add("page-fade")}function m(){document.querySelector('.logo-container[data-page="home"]')?.addEventListener("click",e=>{e.preventDefault(),t("home")}),document.querySelector('.nav-item[data-page="maria"]')?.addEventListener("click",e=>{e.preventDefault(),t("maria")}),document.querySelector(".btn-back-home")?.addEventListener("click",e=>{e.preventDefault(),t("home")}),document.querySelector('.nav-item[data-page="podcast"]')?.addEventListener("click",e=>{e.preventDefault(),t("podcast")})}t("home");
