@@ -11,8 +11,51 @@ const headerTemplate = `
     <nav>
       <ul class="nav-menu">
         <li class="nav-item" data-page="maria">Maria HUIZAR</li>
-        <li class="nav-item">Séances</li>
-        <li class="nav-item">Formations</li>
+        <li class="nav-item dropdown">
+          <span class="dropdown-toggle">Séances ▼</span>
+          <ul class="dropdown-menu">
+            <li class="dropdown-section">
+              <h4>FORMATION REIKI USUI</h4>
+              <ul class="sub-menu">
+                <li><strong>Reiki Niveau 1</strong> - Ouverture et bases de la pratique<br>
+                <small>1 journée - 420€ - Pré requis: 4 séances de Reiki</small></li>
+                <li><strong>Reiki Niveau 2</strong> - Approfondissement et élargissement<br>
+                <small>1 journée - 620€ - Pré requis: Reiki niveau 1</small></li>
+                <li><strong>Reiki Niveau 3</strong> - Maîtrise personnelle et intégration<br>
+                <small>1 journée - 750€ - Pré requis: Reiki niveaux 1 et 2</small></li>
+                <li><strong>Maîtrise Reiki</strong> - Transmission<br>
+                <small>1 journée - 1200€ - Pré requis: Reiki niveaux 1, 2 et 3</small></li>
+              </ul>
+            </li>
+            <li class="dropdown-section">
+              <h4>LECTURES MÉMOIRES AKASHIQUES</h4>
+              <ul class="sub-menu">
+                <li><strong>Niveau 1</strong> - Accès et bases de la lecture<br>
+                <small>12 heures - 450€ - Pré requis: 1 séance individuelle</small></li>
+                <li><strong>Niveau 2</strong> - Pratique approfondie et professionnalisation<br>
+                <small>18 heures - 1050€ - Pré requis: Niveau 1 + 1 séance</small></li>
+                <li><strong>Niveau 3</strong> - Maîtrise et approche thérapeutique<br>
+                <small>Durée définie - 1750€ - Pré requis: Niveaux 1 et 2 + 1 séance</small></li>
+              </ul>
+            </li>
+            <li class="dropdown-section">
+              <h4>CANALISATION ET DIALOGUE INTÉRIEUR</h4>
+              <ul class="sub-menu">
+                <li><strong>Formation en groupe</strong><br>
+                <small>3 heures par séance - 80€/personne - Groupe minimum: 3 personnes</small></li>
+              </ul>
+            </li>
+            <li class="dropdown-section">
+              <h4>TARIFS SÉANCES INDIVIDUELLES</h4>
+              <ul class="sub-menu">
+                <li>Voir clair en soi - 60€ (1h)</li>
+                <li>Séance de Reiki - 80€ (1h15)</li>
+                <li>Lecture mémoires akashiques - 80€ (1h15)</li>
+                <li>Reprogrammation mémoires cellulaires - 80€ (1h15)</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
         <li class="nav-item">Ateliers</li>
         <li class="nav-item">Livres</li>
         <li class="nav-item" data-page="podcast">Podcast</li>
@@ -285,6 +328,40 @@ function attachNavigation() {
   podcastItem?.addEventListener('click', (event) => {
     event.preventDefault()
     render('podcast')
+  })
+
+  // Gestion du menu déroulant
+  const dropdownToggle = document.querySelector<HTMLElement>('.dropdown-toggle')
+  const dropdown = document.querySelector<HTMLElement>('.dropdown')
+  
+  if (dropdownToggle && dropdown) {
+    dropdownToggle.addEventListener('click', (event) => {
+      event.preventDefault()
+      event.stopPropagation()
+      
+      // Fermer tous les autres dropdowns
+      document.querySelectorAll('.dropdown').forEach(d => {
+        if (d !== dropdown) {
+          d.classList.remove('active')
+        }
+      })
+      
+      // Basculer le dropdown actuel
+      dropdown.classList.toggle('active')
+    })
+  }
+
+  // Fermer le dropdown en cliquant à l'extérieur
+  document.addEventListener('click', (event) => {
+    if (!dropdown?.contains(event.target as Node)) {
+      dropdown?.classList.remove('active')
+    }
+  })
+
+  // Empêcher la fermeture en cliquant à l'intérieur du menu
+  const dropdownMenu = document.querySelector<HTMLElement>('.dropdown-menu')
+  dropdownMenu?.addEventListener('click', (event) => {
+    event.stopPropagation()
   })
 }
 

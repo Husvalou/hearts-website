@@ -654,3 +654,127 @@ h1 {
     font-size: 2rem;
   }
 }
+
+/* Styles pour le menu déroulant */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color 0.2s;
+}
+
+.dropdown-toggle:hover {
+  color: #1a1a1a;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  min-width: 400px;
+  max-width: 500px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  padding: 1rem 0;
+  margin-top: 0.5rem;
+}
+
+.dropdown.active .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-section {
+  padding: 0.8rem 1.2rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-section:last-child {
+  border-bottom: none;
+}
+
+.dropdown-section h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #c9a35a;
+  margin: 0 0 0.8rem 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sub-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sub-menu li {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 0.9rem;
+  color: #4a4a4a;
+  line-height: 1.5;
+  margin-bottom: 0.6rem;
+  padding: 0.3rem 0;
+}
+
+.sub-menu li:last-child {
+  margin-bottom: 0;
+}
+
+.sub-menu strong {
+  color: #2c2c2c;
+  font-weight: 600;
+}
+
+.sub-menu small {
+  display: block;
+  color: #7a7a7a;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  line-height: 1.4;
+}
+
+/* Responsive pour le menu déroulant */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 90vw;
+    max-width: 90vw;
+    max-height: 80vh;
+    overflow-y: auto;
+    margin-top: 0;
+  }
+  
+  .dropdown.active .dropdown-menu {
+    transform: translate(-50%, -50%);
+  }
+  
+  .dropdown-section {
+    padding: 1rem;
+  }
+  
+  .dropdown-section h4 {
+    font-size: 0.95rem;
+  }
+  
+  .sub-menu li {
+    font-size: 0.85rem;
+  }
+}

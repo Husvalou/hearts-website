@@ -1,4 +1,4 @@
-(function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))r(e);new MutationObserver(e=>{for(const s of e)if(s.type==="childList")for(const o of s.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&r(o)}).observe(document,{childList:!0,subtree:!0});function l(e){const s={};return e.integrity&&(s.integrity=e.integrity),e.referrerPolicy&&(s.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?s.credentials="include":e.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function r(e){if(e.ep)return;e.ep=!0;const s=l(e);fetch(e.href,s)}})();const a=document.querySelector("#app"),c=`
+(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))c(e);new MutationObserver(e=>{for(const s of e)if(s.type==="childList")for(const o of s.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&c(o)}).observe(document,{childList:!0,subtree:!0});function d(e){const s={};return e.integrity&&(s.integrity=e.integrity),e.referrerPolicy&&(s.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?s.credentials="include":e.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function c(e){if(e.ep)return;e.ep=!0;const s=d(e);fetch(e.href,s)}})();const a=document.querySelector("#app"),l=`
   <header class="header">
     <div class="logo-container" data-page="home">
       <img src="./1-removebg-preview.png" alt="Heart Resonance Logo" class="logo-image" />
@@ -7,8 +7,51 @@
     <nav>
       <ul class="nav-menu">
         <li class="nav-item" data-page="maria">Maria HUIZAR</li>
-        <li class="nav-item">Séances</li>
-        <li class="nav-item">Formations</li>
+        <li class="nav-item dropdown">
+          <span class="dropdown-toggle">Séances ▼</span>
+          <ul class="dropdown-menu">
+            <li class="dropdown-section">
+              <h4>FORMATION REIKI USUI</h4>
+              <ul class="sub-menu">
+                <li><strong>Reiki Niveau 1</strong> - Ouverture et bases de la pratique<br>
+                <small>1 journée - 420€ - Pré requis: 4 séances de Reiki</small></li>
+                <li><strong>Reiki Niveau 2</strong> - Approfondissement et élargissement<br>
+                <small>1 journée - 620€ - Pré requis: Reiki niveau 1</small></li>
+                <li><strong>Reiki Niveau 3</strong> - Maîtrise personnelle et intégration<br>
+                <small>1 journée - 750€ - Pré requis: Reiki niveaux 1 et 2</small></li>
+                <li><strong>Maîtrise Reiki</strong> - Transmission<br>
+                <small>1 journée - 1200€ - Pré requis: Reiki niveaux 1, 2 et 3</small></li>
+              </ul>
+            </li>
+            <li class="dropdown-section">
+              <h4>LECTURES MÉMOIRES AKASHIQUES</h4>
+              <ul class="sub-menu">
+                <li><strong>Niveau 1</strong> - Accès et bases de la lecture<br>
+                <small>12 heures - 450€ - Pré requis: 1 séance individuelle</small></li>
+                <li><strong>Niveau 2</strong> - Pratique approfondie et professionnalisation<br>
+                <small>18 heures - 1050€ - Pré requis: Niveau 1 + 1 séance</small></li>
+                <li><strong>Niveau 3</strong> - Maîtrise et approche thérapeutique<br>
+                <small>Durée définie - 1750€ - Pré requis: Niveaux 1 et 2 + 1 séance</small></li>
+              </ul>
+            </li>
+            <li class="dropdown-section">
+              <h4>CANALISATION ET DIALOGUE INTÉRIEUR</h4>
+              <ul class="sub-menu">
+                <li><strong>Formation en groupe</strong><br>
+                <small>3 heures par séance - 80€/personne - Groupe minimum: 3 personnes</small></li>
+              </ul>
+            </li>
+            <li class="dropdown-section">
+              <h4>TARIFS SÉANCES INDIVIDUELLES</h4>
+              <ul class="sub-menu">
+                <li>Voir clair en soi - 60€ (1h)</li>
+                <li>Séance de Reiki - 80€ (1h15)</li>
+                <li>Lecture mémoires akashiques - 80€ (1h15)</li>
+                <li>Reprogrammation mémoires cellulaires - 80€ (1h15)</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
         <li class="nav-item">Ateliers</li>
         <li class="nav-item">Livres</li>
         <li class="nav-item" data-page="podcast">Podcast</li>
@@ -16,8 +59,8 @@
       </ul>
     </nav>
   </header>
-`,d=`
-  ${c}
+`,p=`
+  ${l}
 
   <div class="banner">
     <div class="banner-overlay"></div>
@@ -85,8 +128,8 @@
       </div>
     </div>
   </section>
-`,p=`
-  ${c}
+`,m=`
+  ${l}
 
   <main class="maria-page">
     <div class="maria-back">
@@ -168,8 +211,8 @@
       </aside>
     </section>
   </main>
-`,u=`
-  ${c}
+`,v=`
+  ${l}
 
   <main class="podcast-page">
     <div class="podcast-back">
@@ -227,4 +270,4 @@
       </aside>
     </section>
   </main>
-`;function t(i){a.classList.remove("page-fade"),a.offsetWidth,i==="home"?a.innerHTML=d:i==="maria"?a.innerHTML=p:a.innerHTML=u,m(),window.scrollTo({top:0,behavior:"instant"}),a.classList.add("page-fade")}function m(){document.querySelector('.logo-container[data-page="home"]')?.addEventListener("click",e=>{e.preventDefault(),t("home")}),document.querySelector('.nav-item[data-page="maria"]')?.addEventListener("click",e=>{e.preventDefault(),t("maria")}),document.querySelector(".btn-back-home")?.addEventListener("click",e=>{e.preventDefault(),t("home")}),document.querySelector('.nav-item[data-page="podcast"]')?.addEventListener("click",e=>{e.preventDefault(),t("podcast")})}t("home");
+`;function t(n){a.classList.remove("page-fade"),a.offsetWidth,n==="home"?a.innerHTML=p:n==="maria"?a.innerHTML=m:a.innerHTML=v,h(),window.scrollTo({top:0,behavior:"instant"}),a.classList.add("page-fade")}function h(){document.querySelector('.logo-container[data-page="home"]')?.addEventListener("click",i=>{i.preventDefault(),t("home")}),document.querySelector('.nav-item[data-page="maria"]')?.addEventListener("click",i=>{i.preventDefault(),t("maria")}),document.querySelector(".btn-back-home")?.addEventListener("click",i=>{i.preventDefault(),t("home")}),document.querySelector('.nav-item[data-page="podcast"]')?.addEventListener("click",i=>{i.preventDefault(),t("podcast")});const e=document.querySelector(".dropdown-toggle"),s=document.querySelector(".dropdown");e&&s&&e.addEventListener("click",i=>{i.preventDefault(),i.stopPropagation(),document.querySelectorAll(".dropdown").forEach(u=>{u!==s&&u.classList.remove("active")}),s.classList.toggle("active")}),document.addEventListener("click",i=>{s?.contains(i.target)||s?.classList.remove("active")}),document.querySelector(".dropdown-menu")?.addEventListener("click",i=>{i.stopPropagation()})}t("home");
