@@ -1,8 +1,4 @@
-import './style.css'
-
-const app = document.querySelector<HTMLDivElement>('#app')!
-
-const headerTemplate = `
+(function(){const l=document.createElement("link").relList;if(l&&l.supports&&l.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))u(a);new MutationObserver(a=>{for(const i of a)if(i.type==="childList")for(const r of i.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&u(r)}).observe(document,{childList:!0,subtree:!0});function p(a){const i={};return a.integrity&&(i.integrity=a.integrity),a.referrerPolicy&&(i.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?i.credentials="include":a.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function u(a){if(a.ep)return;a.ep=!0;const i=p(a);fetch(a.href,i)}})();const e=document.querySelector("#app"),n=`
   <header class="header">
     <div class="logo-container" data-page="home">
       <img src="./1-removebg-preview.png" alt="Heart Resonance Logo" class="logo-image" />
@@ -11,8 +7,8 @@ const headerTemplate = `
     <nav>
       <ul class="nav-menu">
         <li class="nav-item" data-page="maria">Maria HUIZAR</li>
-        <li class="nav-item dropdown">
-          <span class="dropdown-trigger">Séances</span>
+        <li class="nav-item dropdown" data-page="seances">
+          Séances
           <div class="dropdown-content">
             <a href="#" data-page="voir-clair">Voir Clair en Soi</a>
             <a href="#" data-page="memoires-akashiques">Mémoires Akashiques</a>
@@ -20,24 +16,22 @@ const headerTemplate = `
             <a href="#" data-page="reprogrammation">Reprogrammation des Mémoires Cellulaires</a>
           </div>
         </li>
-        <li class="nav-item dropdown">
-          <span class="dropdown-trigger">Tarifs</span>
+        <li class="nav-item dropdown" data-page="formations">
+          Formations
           <div class="dropdown-content">
-            <a href="#" data-page="tarifs">Toutes les formations</a>
-            <a href="#" data-page="reiki-usui">Reiki Usui</a>
-            <a href="#" data-page="memoires-akashiques-formations">Mémoires Akashiques</a>
-            <a href="#" data-page="canalisation">Canalisation</a>
+            <a href="#" data-page="formation-1">Formation 1</a>
+            <a href="#" data-page="formation-2">Formation 2</a>
           </div>
         </li>
-        <li class="nav-item dropdown">
-          <span class="dropdown-trigger">Ateliers</span>
+        <li class="nav-item dropdown" data-page="ateliers">
+          Ateliers
           <div class="dropdown-content">
             <a href="#" data-page="atelier-1">Atelier 1</a>
             <a href="#" data-page="atelier-2">Atelier 2</a>
           </div>
         </li>
-        <li class="nav-item dropdown">
-          <span class="dropdown-trigger">Livres</span>
+        <li class="nav-item dropdown" data-page="livres">
+          Livres
           <div class="dropdown-content">
             <a href="#" data-page="livre-1">Livre 1</a>
             <a href="#" data-page="livre-2">Livre 2</a>
@@ -48,10 +42,8 @@ const headerTemplate = `
       </ul>
     </nav>
   </header>
-`
-
-const homePageTemplate = `
-  ${headerTemplate}
+`,m=`
+  ${n}
 
   <div class="banner">
     <div class="banner-overlay"></div>
@@ -119,10 +111,8 @@ const homePageTemplate = `
       </div>
     </div>
   </section>
-`
-
-const mariaPageTemplate = `
-  ${headerTemplate}
+`,v=`
+  ${n}
 
   <main class="maria-page">
     <div class="maria-back">
@@ -204,10 +194,8 @@ const mariaPageTemplate = `
       </aside>
     </section>
   </main>
-`
-
-const voirClairPageTemplate = `
-  ${headerTemplate}
+`,h=`
+  ${n}
 
   <main class="seances-page">
     <div class="seances-back">
@@ -255,10 +243,8 @@ const voirClairPageTemplate = `
       </div>
     </section>
   </main>
-`
-
-const memoiresAkashiquesPageTemplate = `
-  ${headerTemplate}
+`,g=`
+  ${n}
 
   <main class="seances-page">
     <div class="seances-back">
@@ -298,10 +284,8 @@ const memoiresAkashiquesPageTemplate = `
       </div>
     </section>
   </main>
-`
-
-const reikiPageTemplate = `
-  ${headerTemplate}
+`,f=`
+  ${n}
 
   <main class="seances-page">
     <div class="seances-back">
@@ -373,10 +357,8 @@ const reikiPageTemplate = `
       </div>
     </section>
   </main>
-`
-
-const reprogrammationPageTemplate = `
-  ${headerTemplate}
+`,b=`
+  ${n}
 
   <main class="seances-page">
     <div class="seances-back">
@@ -433,11 +415,8 @@ const reprogrammationPageTemplate = `
       </div>
     </section>
   </main>
-`
-
-
-const reikiUsuiPageTemplate = `
-  ${headerTemplate}
+`,q=`
+  ${n}
 
   <main class="seances-page">
     <div class="seances-back">
@@ -445,90 +424,25 @@ const reikiUsuiPageTemplate = `
     </div>
 
     <section class="seances-hero">
-      <h1>REIKI USUI</h1>
+      <h1>FORMATIONS</h1>
       <p class="seances-intro">
-        Le Reiki est une pratique énergétique d'origine japonaise qui permet de canaliser l'énergie
-        de vie universelle par imposition des mains. Il soutient l'équilibre global de la personne —
-        physique, émotionnel, mental et énergétique — et favorise un état de détente, de présence
-        et d'écoute plus consciente.
-      </p>
-      <p class="seances-intro">
-        Au-delà de l'aspect énergétique, le Reiki développe une posture intérieure stable, une
-        écoute fine et une relation plus claire à ce qui se joue dans l'instant.
+        Découvrez nos formations pour approfondir votre pratique et développer de nouvelles compétences.
       </p>
     </section>
 
     <section class="seances-content">
       <div class="seance-card">
-        <h2>Reiki — Niveau 1 | Ouverture et bases de la pratique</h2>
-        <p>
-          Initiation au Reiki et apprentissage des bases énergétiques. Ce premier niveau permet de se
-          reconnecter à l'énergie Reiki, de pratiquer l'auto-traitement et de découvrir les premiers
-          protocoles.
-        </p>
-        <ul>
-          <li>Formation sur 1 journée</li>
-          <li><strong>Tarif : 420 €</strong></li>
-          <li>Pré requis : avoir réalisé 4 séances de Reiki</li>
-        </ul>
+        <h2>Formation 1</h2>
+        <p>Contenu de la première formation à détailler...</p>
       </div>
-      
       <div class="seance-card">
-        <h2>Reiki — Niveau 2 | Approfondissement et élargissement</h2>
-        <p>
-          Approfondissement de la pratique Reiki, travail avec les symboles, pratique à distance et
-          élargissement du champ d'action. Ce niveau permet d'affiner la perception, le discernement
-          et la posture d'accompagnement.
-        </p>
-        <ul>
-          <li>Formation sur 1 journée</li>
-          <li><strong>Tarif : 620 €</strong></li>
-          <li>Pré requis : avoir validé le Reiki niveau 1</li>
-        </ul>
-      </div>
-      
-      <div class="seance-card">
-        <h2>Reiki — Niveau 3 | Maîtrise personnelle et intégration</h2>
-        <p>
-          Travail de maîtrise personnelle et d'intégration profonde du Reiki dans la posture et la
-          pratique. Ce niveau marque un engagement plus conscient et plus aligné.
-        </p>
-        <ul>
-          <li>Formation sur 1 journée</li>
-          <li><strong>Tarif : 750 €</strong></li>
-          <li>Pré requis : avoir validé les Reiki niveaux 1 et 2</li>
-        </ul>
-      </div>
-      
-      <div class="seance-card">
-        <h2>Maîtrise Reiki | Transmission</h2>
-        <p>
-          Transmission de la lignée Reiki, posture de maître et capacité à initier à son tour.
-        </p>
-        <ul>
-          <li>Formation sur 1 journée</li>
-          <li><strong>Tarif : 1 200 €</strong></li>
-          <li>Pré requis : avoir validé les Reiki niveaux 1, 2 et 3</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="seances-cadre">
-      <div class="cadre-content">
-        <h2>CADRE DES FORMATIONS</h2>
-        <ul>
-          <li>En présentiel ou à distance</li>
-          <li>En individuel ou en petit groupe</li>
-          <li>Sur rendez-vous</li>
-          <li>Cadre confidentiel et respectueux</li>
-        </ul>
+        <h2>Formation 2</h2>
+        <p>Contenu de la deuxième formation à détailler...</p>
       </div>
     </section>
   </main>
-`
-
-const memoiresAkashiquesFormationsPageTemplate = `
-  ${headerTemplate}
+`,L=`
+  ${n}
 
   <main class="seances-page">
     <div class="seances-back">
@@ -536,87 +450,20 @@ const memoiresAkashiquesFormationsPageTemplate = `
     </div>
 
     <section class="seances-hero">
-      <h1>LECTURES DES MÉMOIRES AKASHIQUES</h1>
+      <h1>FORMATION 1</h1>
       <p class="seances-intro">
-        Les mémoires akashiques sont un espace de conscience où sont inscrites les expériences, les
-        schémas et les dynamiques de l'âme. Y accéder permet de mettre en lumière ce qui est à
-        l'œuvre, de voir clair dans des situations complexes et de développer une clairvoyance
-        consciente.
-      </p>
-      <p class="seances-intro">
-        L'ouverture des registres offre un éclairage profond, dans le respect du rythme et du
-        chemin de chacun.
+        Découvrez les détails de cette formation.
       </p>
     </section>
 
     <section class="seances-content">
       <div class="seance-card">
-        <h2>Niveau 1 | Accès et bases de la lecture</h2>
-        <p>
-          Initiation aux lectures akashiques. Apprentissage de l'ouverture de ses propres registres et
-          des bases de la lecture consciente.
-        </p>
-        <ul>
-          <li>Durée : 12 heures</li>
-          <li><strong>Tarif : 450 €</strong></li>
-          <li>Pré requis : avoir réalisé au moins une séance individuelle avec moi</li>
-        </ul>
-      </div>
-      
-      <div class="seance-card">
-        <h2>Niveau 2 | Pratique approfondie et professionnalisation</h2>
-        <p>
-          Niveau destiné aux personnes souhaitant devenir lectrices ou lecteurs des mémoires
-          akashiques et en faire leur activité, ainsi qu'aux thérapeutes et accompagnants désirant
-          consolider leur posture.
-        </p>
-        <p>
-          Ce niveau permet d'approfondir la pratique, d'affiner le discernement et d'accompagner
-          avec clarté et responsabilité.
-        </p>
-        <ul>
-          <li>Durée : 18 heures</li>
-          <li><strong>Tarif : 1 050 €</strong></li>
-          <li>Pré requis : avoir validé le niveau 1 et réalisé au moins une séance individuelle avec moi</li>
-        </ul>
-      </div>
-      
-      <div class="seance-card">
-        <h2>Niveau 3 | Maîtrise et approche thérapeutique</h2>
-        <p>
-          Niveau avancé destiné aux praticiens et thérapeutes expérimentés. Il aborde
-          l'accompagnement lorsque la compréhension seule ne suffit plus : sanation lorsque cela est
-          juste, registres de la thérapie, registres du patient (avec permission), et approche de
-          l'Hôpital de Lumière.
-        </p>
-        <p>
-          Ce niveau demande une grande stabilité intérieure, une posture éthique claire et une
-          responsabilité accrue.
-        </p>
-        <ul>
-          <li>Durée : définie selon le profil du participant</li>
-          <li><strong>Tarif : 1 750 €</strong></li>
-          <li>Pré requis : avoir validé les niveaux 1 et 2 et réalisé au moins une séance individuelle avec moi</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="seances-cadre">
-      <div class="cadre-content">
-        <h2>CADRE DES FORMATIONS</h2>
-        <ul>
-          <li>En présentiel ou à distance</li>
-          <li>En individuel ou en petit groupe</li>
-          <li>Sur rendez-vous</li>
-          <li>Cadre confidentiel et respectueux</li>
-        </ul>
+        <p>Contenu détaillé de la formation 1...</p>
       </div>
     </section>
   </main>
-`
-
-const canalisationPageTemplate = `
-  ${headerTemplate}
+`,R=`
+  ${n}
 
   <main class="seances-page">
     <div class="seances-back">
@@ -624,45 +471,20 @@ const canalisationPageTemplate = `
     </div>
 
     <section class="seances-hero">
-      <h1>CANALISATION ET DIALOGUE INTÉRIEUR</h1>
+      <h1>FORMATION 2</h1>
       <p class="seances-intro">
-        Apprendre à canaliser et dialoguer avec son Soi
-      </p>
-      <p class="seances-intro">
-        Formation destinée aux personnes souhaitant développer leur capacité de canalisation,
-        apprendre à dialoguer avec leur Soi et affiner leur écoute intérieure.
+        Découvrez les détails de cette formation.
       </p>
     </section>
 
     <section class="seances-content">
       <div class="seance-card">
-        <h2>Détails de la formation</h2>
-        <ul>
-          <li>Formation en groupe</li>
-          <li>Groupe minimum : 3 personnes</li>
-          <li>Durée : 3 heures par séance</li>
-          <li>Plusieurs séances possibles selon l'avancement du groupe</li>
-          <li><strong>Tarif : 80 € / 3 heures / personne</strong></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="seances-cadre">
-      <div class="cadre-content">
-        <h2>CADRE DES FORMATIONS</h2>
-        <ul>
-          <li>En présentiel ou à distance</li>
-          <li>En groupe (minimum 3 personnes)</li>
-          <li>Sur rendez-vous</li>
-          <li>Cadre confidentiel et respectueux</li>
-        </ul>
+        <p>Contenu détaillé de la formation 2...</p>
       </div>
     </section>
   </main>
-`
-
-const ateliersPageTemplate = `
-  ${headerTemplate}
+`,E=`
+  ${n}
 
   <main class="seances-page">
     <div class="seances-back">
@@ -687,10 +509,8 @@ const ateliersPageTemplate = `
       </div>
     </section>
   </main>
-`
-
-const atelier1PageTemplate = `
-  ${headerTemplate}
+`,S=`
+  ${n}
 
   <main class="seances-page">
     <div class="seances-back">
@@ -710,10 +530,8 @@ const atelier1PageTemplate = `
       </div>
     </section>
   </main>
-`
-
-const atelier2PageTemplate = `
-  ${headerTemplate}
+`,I=`
+  ${n}
 
   <main class="seances-page">
     <div class="seances-back">
@@ -733,10 +551,8 @@ const atelier2PageTemplate = `
       </div>
     </section>
   </main>
-`
-
-const livresPageTemplate = `
-  ${headerTemplate}
+`,k=`
+  ${n}
 
   <main class="seances-page">
     <div class="seances-back">
@@ -761,10 +577,8 @@ const livresPageTemplate = `
       </div>
     </section>
   </main>
-`
-
-const livre1PageTemplate = `
-  ${headerTemplate}
+`,A=`
+  ${n}
 
   <main class="seances-page">
     <div class="seances-back">
@@ -784,10 +598,8 @@ const livre1PageTemplate = `
       </div>
     </section>
   </main>
-`
-
-const livre2PageTemplate = `
-  ${headerTemplate}
+`,C=`
+  ${n}
 
   <main class="seances-page">
     <div class="seances-back">
@@ -807,227 +619,8 @@ const livre2PageTemplate = `
       </div>
     </section>
   </main>
-`
-
-const tarifsPageTemplate = `
-  ${headerTemplate}
-
-  <main class="tarifs-page">
-    <div class="tarifs-back">
-      <button class="btn-back-home" data-page="home">← Retour à l'accueil</button>
-    </div>
-
-    <section class="tarifs-hero">
-      <h1>FORMATIONS – HEART RESONANCE</h1>
-      <p class="tarifs-intro">
-        Les formations proposées s'adressent aux personnes qui souhaitent voir clair dans des
-        situations complexes, développer leur clairvoyance consciente et affiner leur posture
-        intérieure, pour elles-mêmes ou dans une pratique d'accompagnement.
-      </p>
-      <p class="tarifs-intro">
-        Elles sont conçues comme des chemins progressifs, alliant compréhension, pratique et
-        intégration. Elles peuvent se dérouler en présentiel ou à distance, en individuel ou en petit
-        groupe, selon la formation concernée.
-      </p>
-    </section>
-
-    <section class="tarifs-content">
-      <div class="tarifs-grid">
-        <div class="tarif-card">
-          <h2>REIKI USUI</h2>
-          <p>
-            Le Reiki est une pratique énergétique d'origine japonaise qui permet de canaliser l'énergie
-            de vie universelle par imposition des mains. Il soutient l'équilibre global de la personne —
-            physique, émotionnel, mental et énergétique — et favorise un état de détente, de présence
-            et d'écoute plus consciente.
-          </p>
-          <p>
-            Au-delà de l'aspect énergétique, le Reiki développe une posture intérieure stable, une
-            écoute fine et une relation plus claire à ce qui se joue dans l'instant.
-          </p>
-          
-          <div class="formation-item">
-            <h3>Reiki — Niveau 1 | Ouverture et bases de la pratique</h3>
-            <p>
-              Initiation au Reiki et apprentissage des bases énergétiques. Ce premier niveau permet de se
-              reconnecter à l'énergie Reiki, de pratiquer l'auto-traitement et de découvrir les premiers
-              protocoles.
-            </p>
-            <ul class="formation-details">
-              <li>Formation sur 1 journée</li>
-              <li><strong>Tarif : 420 €</strong></li>
-              <li>Pré requis : avoir réalisé 4 séances de Reiki</li>
-            </ul>
-          </div>
-          
-          <div class="formation-item">
-            <h3>Reiki — Niveau 2 | Approfondissement et élargissement</h3>
-            <p>
-              Approfondissement de la pratique Reiki, travail avec les symboles, pratique à distance et
-              élargissement du champ d'action. Ce niveau permet d'affiner la perception, le discernement
-              et la posture d'accompagnement.
-            </p>
-            <ul class="formation-details">
-              <li>Formation sur 1 journée</li>
-              <li><strong>Tarif : 620 €</strong></li>
-              <li>Pré requis : avoir validé le Reiki niveau 1</li>
-            </ul>
-          </div>
-          
-          <div class="formation-item">
-            <h3>Reiki — Niveau 3 | Maîtrise personnelle et intégration</h3>
-            <p>
-              Travail de maîtrise personnelle et d'intégration profonde du Reiki dans la posture et la
-              pratique. Ce niveau marque un engagement plus conscient et plus aligné.
-            </p>
-            <ul class="formation-details">
-              <li>Formation sur 1 journée</li>
-              <li><strong>Tarif : 750 €</strong></li>
-              <li>Pré requis : avoir validé les Reiki niveaux 1 et 2</li>
-            </ul>
-          </div>
-          
-          <div class="formation-item">
-            <h3>Maîtrise Reiki | Transmission</h3>
-            <p>
-              Transmission de la lignée Reiki, posture de maître et capacité à initier à son tour.
-            </p>
-            <ul class="formation-details">
-              <li>Formation sur 1 journée</li>
-              <li><strong>Tarif : 1 200 €</strong></li>
-              <li>Pré requis : avoir validé les Reiki niveaux 1, 2 et 3</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="tarif-card">
-          <h2>LECTURES DES MÉMOIRES AKASHIQUES</h2>
-          <p>
-            Les mémoires akashiques sont un espace de conscience où sont inscrites les expériences, les
-            schémas et les dynamiques de l'âme. Y accéder permet de mettre en lumière ce qui est à
-            l'œuvre, de voir clair dans des situations complexes et de développer une clairvoyance
-            consciente.
-          </p>
-          <p>
-            L'ouverture des registres offre un éclairage profond, dans le respect du rythme et du
-            chemin de chacun.
-          </p>
-          
-          <div class="formation-item">
-            <h3>Niveau 1 | Accès et bases de la lecture</h3>
-            <p>
-              Initiation aux lectures akashiques. Apprentissage de l'ouverture de ses propres registres et
-              des bases de la lecture consciente.
-            </p>
-            <ul class="formation-details">
-              <li>Durée : 12 heures</li>
-              <li><strong>Tarif : 450 €</strong></li>
-              <li>Pré requis : avoir réalisé au moins une séance individuelle avec moi</li>
-            </ul>
-          </div>
-          
-          <div class="formation-item">
-            <h3>Niveau 2 | Pratique approfondie et professionnalisation</h3>
-            <p>
-              Niveau destiné aux personnes souhaitant devenir lectrices ou lecteurs des mémoires
-              akashiques et en faire leur activité, ainsi qu'aux thérapeutes et accompagnants désirant
-              consolider leur posture.
-            </p>
-            <p>
-              Ce niveau permet d'approfondir la pratique, d'affiner le discernement et d'accompagner
-              avec clarté et responsabilité.
-            </p>
-            <ul class="formation-details">
-              <li>Durée : 18 heures</li>
-              <li><strong>Tarif : 1 050 €</strong></li>
-              <li>Pré requis : avoir validé le niveau 1 et réalisé au moins une séance individuelle avec moi</li>
-            </ul>
-          </div>
-          
-          <div class="formation-item">
-            <h3>Niveau 3 | Maîtrise et approche thérapeutique</h3>
-            <p>
-              Niveau avancé destiné aux praticiens et thérapeutes expérimentés. Il aborde
-              l'accompagnement lorsque la compréhension seule ne suffit plus : sanation lorsque cela est
-              juste, registres de la thérapie, registres du patient (avec permission), et approche de
-              l'Hôpital de Lumière.
-            </p>
-            <p>
-              Ce niveau demande une grande stabilité intérieure, une posture éthique claire et une
-              responsabilité accrue.
-            </p>
-            <ul class="formation-details">
-              <li>Durée : définie selon le profil du participant</li>
-              <li><strong>Tarif : 1 750 €</strong></li>
-              <li>Pré requis : avoir validé les niveaux 1 et 2 et réalisé au moins une séance individuelle avec moi</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="tarif-card">
-          <h2>CANALISATION ET DIALOGUE INTÉRIEUR</h2>
-          <p>
-            Apprendre à canaliser et dialoguer avec son Soi
-          </p>
-          <p>
-            Formation destinée aux personnes souhaitant développer leur capacité de canalisation,
-            apprendre à dialoguer avec leur Soi et affiner leur écoute intérieure.
-          </p>
-          <ul class="formation-details">
-            <li>Formation en groupe</li>
-            <li>Groupe minimum : 3 personnes</li>
-            <li>Durée : 3 heures par séance</li>
-            <li>Plusieurs séances possibles selon l'avancement du groupe</li>
-            <li><strong>Tarif : 80 € / 3 heures / personne</strong></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="tarifs-fil-conducteur">
-      <div class="fil-content">
-        <h2>FIL CONDUCTEUR DES FORMATIONS</h2>
-        <ul>
-          <li>Voir clair dans des situations complexes</li>
-          <li>Développer une clairvoyance consciente</li>
-          <li>Affiner la perception sans surinterprétation</li>
-          <li>Accompagner avec justesse, présence et discernement</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="tarifs-seances">
-      <div class="seances-content">
-        <h2>Tarifs séances</h2>
-        <div class="seances-grid">
-          <div class="seance-tarif">
-            <h3>Séance voir clair en soi</h3>
-            <p class="tarif-price">60 €</p>
-            <p class="tarif-duration">1 h</p>
-          </div>
-          <div class="seance-tarif">
-            <h3>Séance de Reiki</h3>
-            <p class="tarif-price">80 €</p>
-            <p class="tarif-duration">1 h 15</p>
-          </div>
-          <div class="seance-tarif">
-            <h3>Lecture des mémoires akashiques</h3>
-            <p class="tarif-price">80 €</p>
-            <p class="tarif-duration">1 h 15</p>
-          </div>
-          <div class="seance-tarif">
-            <h3>Reprogrammation des mémoires cellulaires</h3>
-            <p class="tarif-price">80 €</p>
-            <p class="tarif-duration">1 h 15</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-`
-
-const podcastPageTemplate = `
-  ${headerTemplate}
+`,y=`
+  ${n}
 
   <main class="podcast-page">
     <div class="podcast-back">
@@ -1085,144 +678,4 @@ const podcastPageTemplate = `
       </aside>
     </section>
   </main>
-`
-
-type Page = 'home' | 'maria' | 'seances' | 'voir-clair' | 'memoires-akashiques' | 'reiki' | 'reprogrammation' | 'tarifs' | 'reiki-usui' | 'memoires-akashiques-formations' | 'canalisation' | 'ateliers' | 'atelier-1' | 'atelier-2' | 'livres' | 'livre-1' | 'livre-2' | 'podcast'
-
-function render(page: Page) {
-  // reset animation
-  app.classList.remove('page-fade')
-  // force reflow to restart animation each time
-  void app.offsetWidth
-
-  if (page === 'home') {
-    app.innerHTML = homePageTemplate
-  } else if (page === 'maria') {
-    app.innerHTML = mariaPageTemplate
-  } else if (page === 'voir-clair') {
-    app.innerHTML = voirClairPageTemplate
-  } else if (page === 'memoires-akashiques') {
-    app.innerHTML = memoiresAkashiquesPageTemplate
-  } else if (page === 'reiki') {
-    app.innerHTML = reikiPageTemplate
-  } else if (page === 'reprogrammation') {
-    app.innerHTML = reprogrammationPageTemplate
-  } else if (page === 'tarifs') {
-    app.innerHTML = tarifsPageTemplate
-  } else if (page === 'reiki-usui') {
-    app.innerHTML = reikiUsuiPageTemplate
-  } else if (page === 'memoires-akashiques-formations') {
-    app.innerHTML = memoiresAkashiquesFormationsPageTemplate
-  } else if (page === 'canalisation') {
-    app.innerHTML = canalisationPageTemplate
-  } else if (page === 'ateliers') {
-    app.innerHTML = ateliersPageTemplate
-  } else if (page === 'atelier-1') {
-    app.innerHTML = atelier1PageTemplate
-  } else if (page === 'atelier-2') {
-    app.innerHTML = atelier2PageTemplate
-  } else if (page === 'livres') {
-    app.innerHTML = livresPageTemplate
-  } else if (page === 'livre-1') {
-    app.innerHTML = livre1PageTemplate
-  } else if (page === 'livre-2') {
-    app.innerHTML = livre2PageTemplate
-  } else {
-    app.innerHTML = podcastPageTemplate
-  }
-
-  attachNavigation()
-  window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior })
-
-  // run fade-in animation
-  app.classList.add('page-fade')
-}
-
-function attachNavigation() {
-  const logo = document.querySelector<HTMLElement>('.logo-container[data-page="home"]')
-  logo?.addEventListener('click', (event) => {
-    event.preventDefault()
-    render('home')
-  })
-
-  const mariaItem = document.querySelector<HTMLElement>('.nav-item[data-page="maria"]')
-  mariaItem?.addEventListener('click', (event) => {
-    event.preventDefault()
-    render('maria')
-  })
-
-  const backHomeButton = document.querySelector<HTMLElement>('.btn-back-home')
-  backHomeButton?.addEventListener('click', (event) => {
-    event.preventDefault()
-    render('home')
-  })
-
-  const seancesItem = document.querySelector<HTMLElement>('.nav-item[data-page="seances"]')
-  seancesItem?.addEventListener('click', (event) => {
-    event.preventDefault()
-    render('seances')
-  })
-
-  const podcastItem = document.querySelector<HTMLElement>('.nav-item[data-page="podcast"]')
-  podcastItem?.addEventListener('click', (event) => {
-    event.preventDefault()
-    render('podcast')
-  })
-
-  const tarifsItem = document.querySelector<HTMLElement>('.nav-item[data-page="tarifs"]')
-  tarifsItem?.addEventListener('click', (event) => {
-    event.preventDefault()
-    render('tarifs')
-  })
-
-  // Dropdown menu functionality
-  const dropdowns = document.querySelectorAll<HTMLElement>('.dropdown')
-  
-  dropdowns.forEach(dropdown => {
-    const content = dropdown.querySelector<HTMLElement>('.dropdown-content')
-    let timeout: number
-    
-    // Show dropdown on hover
-    dropdown.addEventListener('mouseenter', () => {
-      clearTimeout(timeout)
-      content?.classList.add('show')
-    })
-    
-    // Hide dropdown with delay when leaving
-    dropdown.addEventListener('mouseleave', () => {
-      timeout = setTimeout(() => {
-        content?.classList.remove('show')
-      }, 300) // Increased delay for better UX
-    })
-    
-    // Keep dropdown open when hovering over content
-    content?.addEventListener('mouseenter', () => {
-      clearTimeout(timeout)
-    })
-    
-    content?.addEventListener('mouseleave', () => {
-      timeout = setTimeout(() => {
-        content?.classList.remove('show')
-      }, 300)
-    })
-  })
-  
-  // Handle dropdown item clicks
-  const dropdownItems = document.querySelectorAll<HTMLElement>('.dropdown-content a')
-  dropdownItems.forEach(item => {
-    item.addEventListener('click', (event) => {
-      event.preventDefault()
-      event.stopPropagation()
-      const targetPage = item.getAttribute('data-page')
-      if (targetPage) {
-        // Close all dropdowns before navigation
-        document.querySelectorAll<HTMLElement>('.dropdown-content').forEach(dropdown => {
-          dropdown.classList.remove('show')
-        })
-        render(targetPage as Page)
-      }
-    })
-  })
-}
-
-render('home')
+`;function o(s){e.classList.remove("page-fade"),e.offsetWidth,s==="home"?e.innerHTML=m:s==="maria"?e.innerHTML=v:s==="voir-clair"?e.innerHTML=h:s==="memoires-akashiques"?e.innerHTML=g:s==="reiki"?e.innerHTML=f:s==="reprogrammation"?e.innerHTML=b:s==="formations"?e.innerHTML=q:s==="formation-1"?e.innerHTML=L:s==="formation-2"?e.innerHTML=R:s==="ateliers"?e.innerHTML=E:s==="atelier-1"?e.innerHTML=S:s==="atelier-2"?e.innerHTML=I:s==="livres"?e.innerHTML=k:s==="livre-1"?e.innerHTML=A:s==="livre-2"?e.innerHTML=C:e.innerHTML=y,M(),window.scrollTo({top:0,behavior:"instant"}),e.classList.add("page-fade")}function M(){document.querySelector('.logo-container[data-page="home"]')?.addEventListener("click",t=>{t.preventDefault(),o("home")}),document.querySelector('.nav-item[data-page="maria"]')?.addEventListener("click",t=>{t.preventDefault(),o("maria")}),document.querySelector(".btn-back-home")?.addEventListener("click",t=>{t.preventDefault(),o("home")}),document.querySelector('.nav-item[data-page="seances"]')?.addEventListener("click",t=>{t.preventDefault(),o("seances")}),document.querySelector('.nav-item[data-page="podcast"]')?.addEventListener("click",t=>{t.preventDefault(),o("podcast")});const i=document.querySelector(".dropdown"),r=document.querySelector(".dropdown-content");i?.addEventListener("mouseenter",()=>{r?.classList.add("show")}),i?.addEventListener("mouseleave",()=>{r?.classList.remove("show")}),document.querySelectorAll(".dropdown-content a").forEach(t=>{t.addEventListener("click",d=>{d.preventDefault(),d.stopPropagation();const c=t.getAttribute("data-page");c&&o(c)})}),document.querySelectorAll(".dropdown").forEach(t=>{t.addEventListener("click",d=>{d.preventDefault();const c=t.getAttribute("data-page");c&&o(c)})})}o("home");
