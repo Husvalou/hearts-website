@@ -1237,7 +1237,6 @@ function attachNavigation() {
   
   dropdowns.forEach(dropdown => {
     const content = dropdown.querySelector<HTMLElement>('.dropdown-content')
-    const trigger = dropdown.querySelector<HTMLElement>('.dropdown-trigger')
     let timeout: number
     
     // Show dropdown on hover (desktop only)
@@ -1245,12 +1244,6 @@ function attachNavigation() {
       dropdown.addEventListener('mouseenter', () => {
         clearTimeout(timeout)
         content?.classList.add('show')
-        
-        // Position dropdown for desktop
-        if (content && trigger) {
-          const triggerRect = trigger.getBoundingClientRect()
-          content.style.top = `${triggerRect.bottom + 10}px`
-        }
       })
       
       dropdown.addEventListener('mouseleave', () => {
@@ -1271,6 +1264,7 @@ function attachNavigation() {
     }
     
     // Mobile dropdown toggle
+    const trigger = dropdown.querySelector<HTMLElement>('.dropdown-trigger')
     trigger?.addEventListener('click', (event) => {
       if (window.innerWidth <= 600) {
         event.preventDefault()
@@ -1286,16 +1280,10 @@ function attachNavigation() {
           }
         })
         
-        // Remove open class from all triggers and dropdowns
+        // Remove open class from all triggers
         document.querySelectorAll<HTMLElement>('.dropdown-trigger').forEach(otherTrigger => {
           if (otherTrigger !== trigger) {
             otherTrigger.classList.remove('open')
-          }
-        })
-        
-        document.querySelectorAll<HTMLElement>('.dropdown').forEach(otherDropdown => {
-          if (otherDropdown !== dropdown) {
-            otherDropdown.classList.remove('dropdown-open')
           }
         })
         
@@ -1303,19 +1291,9 @@ function attachNavigation() {
         if (isCurrentlyOpen) {
           content?.classList.remove('show')
           trigger?.classList.remove('open')
-          dropdown.classList.remove('dropdown-open')
-          navMenu?.classList.remove('dropdown-open')
         } else {
           content?.classList.add('show')
           trigger?.classList.add('open')
-          dropdown.classList.add('dropdown-open')
-          navMenu?.classList.add('dropdown-open')
-          
-          // Position dropdown for mobile
-          if (content && trigger) {
-            const triggerRect = trigger.getBoundingClientRect()
-            content.style.top = `${triggerRect.bottom + 10}px`
-          }
         }
       }
     })
@@ -1333,14 +1311,6 @@ function attachNavigation() {
         document.querySelectorAll<HTMLElement>('.dropdown-content').forEach(dropdown => {
           dropdown.classList.remove('show')
         })
-        // Remove all dropdown-open classes
-        document.querySelectorAll<HTMLElement>('.dropdown').forEach(dropdown => {
-          dropdown.classList.remove('dropdown-open')
-        })
-        document.querySelectorAll<HTMLElement>('.dropdown-trigger').forEach(trigger => {
-          trigger.classList.remove('open')
-        })
-        navMenu?.classList.remove('dropdown-open')
         // Close mobile menu and remove body lock
         if (window.innerWidth <= 600) {
           mobileMenuBtn?.classList.remove('open')
