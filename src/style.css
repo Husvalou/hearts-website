@@ -1215,6 +1215,15 @@ h1 {
     box-shadow: 0 2px 20px rgba(0,0,0,0.05);
   }
   
+  /* Hide other menu items when dropdown is open */
+  .nav-menu.dropdown-open .nav-item:not(.dropdown):not(.dropdown-open) {
+    display: none;
+  }
+  
+  .nav-menu.dropdown-open .dropdown:not(.dropdown-open) {
+    display: none;
+  }
+  
   .logo-container {
     display: flex;
     align-items: center;
