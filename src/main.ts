@@ -8,6 +8,11 @@ const headerTemplate = `
       <img src="./1-removebg-preview.png" alt="Heart Resonance Logo" class="logo-image" />
       <span class="logo-title">Heart Resonance</span>
     </div>
+    <button class="mobile-menu-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <nav>
       <ul class="nav-menu">
         <li class="nav-item" data-page="maria">Maria HUIZAR</li>
@@ -47,6 +52,7 @@ const headerTemplate = `
         <li class="nav-item">Newsletter</li>
       </ul>
     </nav>
+    <div class="mobile-menu-overlay"></div>
   </header>
 `
 
@@ -639,10 +645,10 @@ const canalisationPageTemplate = `
         <h2>Détails de la formation</h2>
         <ul>
           <li>Formation en groupe</li>
-          <li>Groupe minimum : 3 personnes</li>
+          <li>Groupe minimum : 5 personnes</li>
           <li>Durée : 3 heures par séance</li>
           <li>Plusieurs séances possibles selon l'avancement du groupe</li>
-          <li><strong>Tarif : 80 € / 3 heures / personne</strong></li>
+          <li><strong>Tarif : 100 € / 3 heures / personne</strong></li>
         </ul>
       </div>
     </section>
@@ -975,10 +981,10 @@ const tarifsPageTemplate = `
           </p>
           <ul class="formation-details">
             <li>Formation en groupe</li>
-            <li>Groupe minimum : 3 personnes</li>
+            <li>Groupe minimum : 5 personnes</li>
             <li>Durée : 3 heures par séance</li>
             <li>Plusieurs séances possibles selon l'avancement du groupe</li>
-            <li><strong>Tarif : 80 € / 3 heures / personne</strong></li>
+            <li><strong>Tarif : 100 € / 3 heures / personne</strong></li>
           </ul>
         </div>
       </div>
@@ -1175,6 +1181,57 @@ function attachNavigation() {
     render('tarifs')
   })
 
+  // Mobile menu functionality
+  const mobileMenuBtn = document.querySelector<HTMLElement>('.mobile-menu-btn')
+  const navMenu = document.querySelector<HTMLElement>('.nav-menu')
+  const overlay = document.querySelector<HTMLElement>('.mobile-menu-overlay')
+  
+  // Function to get scrollbar width
+  function getScrollbarWidth(): number {
+    const outer = document.createElement('div')
+    outer.style.visibility = 'hidden'
+    outer.style.overflow = 'scroll'
+    document.body.appendChild(outer)
+    
+    const inner = document.createElement('div')
+    outer.appendChild(inner)
+    
+    const scrollbarWidth = outer.offsetWidth - inner.offsetWidth
+    outer.parentNode?.removeChild(outer)
+    
+    return scrollbarWidth
+  }
+  
+  // Store scrollbar width
+  const scrollbarWidth = getScrollbarWidth()
+  document.documentElement.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`)
+  
+  if (mobileMenuBtn && navMenu && overlay) {
+    mobileMenuBtn.addEventListener('click', () => {
+      const isOpen = mobileMenuBtn.classList.contains('open')
+      
+      if (isOpen) {
+        mobileMenuBtn.classList.remove('open')
+        navMenu.classList.remove('mobile-open')
+        overlay.classList.remove('show')
+        document.body.classList.remove('menu-open')
+      } else {
+        mobileMenuBtn.classList.add('open')
+        navMenu.classList.add('mobile-open')
+        overlay.classList.add('show')
+        document.body.classList.add('menu-open')
+      }
+    })
+    
+    // Close menu when clicking overlay
+    overlay.addEventListener('click', () => {
+      mobileMenuBtn.classList.remove('open')
+      navMenu.classList.remove('mobile-open')
+      overlay.classList.remove('show')
+      document.body.classList.remove('menu-open')
+    })
+  }
+
   // Dropdown menu functionality
   const dropdowns = document.querySelectorAll<HTMLElement>('.dropdown')
   
@@ -1182,28 +1239,73 @@ function attachNavigation() {
     const content = dropdown.querySelector<HTMLElement>('.dropdown-content')
     let timeout: number
     
-    // Show dropdown on hover
-    dropdown.addEventListener('mouseenter', () => {
-      clearTimeout(timeout)
-      content?.classList.add('show')
-    })
+    // Show dropdown on hover (desktop only)
+    if (window.innerWidth > 600) {
+      dropdown.addEventListener('mouseenter', () => {
+        clearTimeout(timeout)
+        content?.classList.add('show')
+      })
+      
+      dropdown.addEventListener('mouseleave', () => {
+        timeout = setTimeout(() => {
+          content?.classList.remove('show')
+        }, 300)
+      })
+      
+      content?.addEventListener('mouseenter', () => {
+        clearTimeout(timeout)
+      })
+      
+      content?.addEventListener('mouseleave', () => {
+        timeout = setTimeout(() => {
+          content?.classList.remove('show')
+        }, 300)
+      })
+    }
     
-    // Hide dropdown with delay when leaving
-    dropdown.addEventListener('mouseleave', () => {
-      timeout = setTimeout(() => {
-        content?.classList.remove('show')
-      }, 300) // Increased delay for better UX
-    })
-    
-    // Keep dropdown open when hovering over content
-    content?.addEventListener('mouseenter', () => {
-      clearTimeout(timeout)
-    })
-    
-    content?.addEventListener('mouseleave', () => {
-      timeout = setTimeout(() => {
-        content?.classList.remove('show')
-      }, 300)
+    // Mobile dropdown toggle
+    const trigger = dropdown.querySelector<HTMLElement>('.dropdown-trigger')
+    trigger?.addEventListener('click', (event) => {
+      if (window.innerWidth <= 600) {
+        event.preventDefault()
+        event.stopPropagation()
+        
+        // Toggle current dropdown
+        const isCurrentlyOpen = content?.classList.contains('show')
+        
+        // Close all other dropdowns first
+        document.querySelectorAll<HTMLElement>('.dropdown-content').forEach(otherContent => {
+          if (otherContent !== content) {
+            otherContent.classList.remove('show')
+          }
+        })
+        
+        // Remove open class from all triggers and dropdowns
+        document.querySelectorAll<HTMLElement>('.dropdown-trigger').forEach(otherTrigger => {
+          if (otherTrigger !== trigger) {
+            otherTrigger.classList.remove('open')
+          }
+        })
+        
+        document.querySelectorAll<HTMLElement>('.dropdown').forEach(otherDropdown => {
+          if (otherDropdown !== dropdown) {
+            otherDropdown.classList.remove('dropdown-open')
+          }
+        })
+        
+        // Toggle current dropdown
+        if (isCurrentlyOpen) {
+          content?.classList.remove('show')
+          trigger?.classList.remove('open')
+          dropdown.classList.remove('dropdown-open')
+          navMenu?.classList.remove('dropdown-open')
+        } else {
+          content?.classList.add('show')
+          trigger?.classList.add('open')
+          dropdown.classList.add('dropdown-open')
+          navMenu?.classList.add('dropdown-open')
+        }
+      }
     })
   })
   
@@ -1219,7 +1321,36 @@ function attachNavigation() {
         document.querySelectorAll<HTMLElement>('.dropdown-content').forEach(dropdown => {
           dropdown.classList.remove('show')
         })
+        // Remove all dropdown-open classes
+        document.querySelectorAll<HTMLElement>('.dropdown').forEach(dropdown => {
+          dropdown.classList.remove('dropdown-open')
+        })
+        document.querySelectorAll<HTMLElement>('.dropdown-trigger').forEach(trigger => {
+          trigger.classList.remove('open')
+        })
+        navMenu?.classList.remove('dropdown-open')
+        // Close mobile menu and remove body lock
+        if (window.innerWidth <= 600) {
+          mobileMenuBtn?.classList.remove('open')
+          navMenu?.classList.remove('mobile-open')
+          overlay?.classList.remove('show')
+          document.body.classList.remove('menu-open')
+        }
         render(targetPage as Page)
+      }
+    })
+  })
+  
+  // Also handle regular nav items clicks
+  const navItems = document.querySelectorAll<HTMLElement>('.nav-item:not(.dropdown)')
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      if (window.innerWidth <= 600) {
+        // Close mobile menu and remove body lock
+        mobileMenuBtn?.classList.remove('open')
+        navMenu?.classList.remove('mobile-open')
+        overlay?.classList.remove('show')
+        document.body.classList.remove('menu-open')
       }
     })
   })
