@@ -1237,6 +1237,7 @@ function attachNavigation() {
   
   dropdowns.forEach(dropdown => {
     const content = dropdown.querySelector<HTMLElement>('.dropdown-content')
+    const trigger = dropdown.querySelector<HTMLElement>('.dropdown-trigger')
     let timeout: number
     
     // Show dropdown on hover (desktop only)
@@ -1244,6 +1245,12 @@ function attachNavigation() {
       dropdown.addEventListener('mouseenter', () => {
         clearTimeout(timeout)
         content?.classList.add('show')
+        
+        // Position dropdown for desktop
+        if (content && trigger) {
+          const triggerRect = trigger.getBoundingClientRect()
+          content.style.top = `${triggerRect.bottom + 10}px`
+        }
       })
       
       dropdown.addEventListener('mouseleave', () => {
@@ -1264,7 +1271,6 @@ function attachNavigation() {
     }
     
     // Mobile dropdown toggle
-    const trigger = dropdown.querySelector<HTMLElement>('.dropdown-trigger')
     trigger?.addEventListener('click', (event) => {
       if (window.innerWidth <= 600) {
         event.preventDefault()
@@ -1304,6 +1310,12 @@ function attachNavigation() {
           trigger?.classList.add('open')
           dropdown.classList.add('dropdown-open')
           navMenu?.classList.add('dropdown-open')
+          
+          // Position dropdown for mobile
+          if (content && trigger) {
+            const triggerRect = trigger.getBoundingClientRect()
+            content.style.top = `${triggerRect.bottom + 10}px`
+          }
         }
       }
     })

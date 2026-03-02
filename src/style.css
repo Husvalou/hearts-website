@@ -1470,23 +1470,23 @@ h1 {
     
     .dropdown-content {
       display: none;
-      position: absolute;
-      top: 100%;
+      position: fixed;
+      top: auto;
       left: 50%;
       transform: translateX(-50%);
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
-      backdrop-filter: blur(20px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-      border-radius: 12px;
-      margin-top: 0.5rem;
+      background: #ffffff;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      border-radius: 16px;
+      margin-top: 1rem;
       opacity: 0;
       visibility: hidden;
-      transform: translateX(-50%) translateY(-10px);
-      transition: all 0.3s ease;
+      transform: translateX(-50%) translateY(-20px);
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       overflow: visible;
       z-index: 9999999 !important;
-      border: 1px solid rgba(201, 163, 90, 0.1);
-      min-width: 200px;
+      border: 2px solid #c9a35a;
+      min-width: 250px;
+      padding: 0.5rem;
     }
     
     .dropdown-content.show {
@@ -1498,12 +1498,12 @@ h1 {
     
     .dropdown-content a {
       display: block;
-      padding: 0.8rem 1.2rem;
-      font-size: 0.9rem;
-      font-weight: 500;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
       text-align: left;
       border-left: none;
-      border-bottom: 1px solid rgba(201, 163, 90, 0.08);
+      border-bottom: 1px solid rgba(201, 163, 90, 0.1);
       background: transparent;
       color: #333;
       transition: all 0.3s ease;
@@ -1511,25 +1511,15 @@ h1 {
       word-wrap: normal;
       overflow-wrap: normal;
       line-height: 1.4;
-    }
-    
-    .dropdown-content a:first-child {
-      border-radius: 12px 12px 0 0;
-      margin-top: 0;
-      border-top: none;
-    }
-    
-    .dropdown-content a:last-child {
-      border-radius: 0 0 12px 12px;
-      margin-bottom: 0;
-      border-bottom: none;
+      border-radius: 8px;
+      margin: 0.25rem;
     }
     
     .dropdown-content a:hover {
-      background: linear-gradient(135deg, rgba(201, 163, 90, 0.1) 0%, rgba(201, 163, 90, 0.05) 100%);
-      color: #c9a35a;
-      padding-left: 1.5rem;
-      transform: translateX(2px);
+      background: linear-gradient(135deg, #c9a35a 0%, #b8931f 100%);
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(201, 163, 90, 0.3);
     }
     
     .mobile-menu-overlay {
