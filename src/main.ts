@@ -5,7 +5,7 @@ const app = document.querySelector<HTMLDivElement>('#app')!
 const headerTemplate = `
   <header class="header">
     <div class="logo-container" data-page="home">
-      <img src="./1-removebg-preview.png" alt="Heart Resonance Logo" class="logo-image" />
+      <img src="./1-removebg-preview.png" alt="Heart Resonance Logo" class="logo-image" style="height: 12rem;" />
       <span class="logo-title">Heart Resonance</span>
     </div>
     <button class="mobile-menu-btn">
@@ -16,6 +16,7 @@ const headerTemplate = `
     <nav>
       <ul class="nav-menu">
         <li class="nav-item" data-page="maria">Maria HUIZAR</li>
+        <li class="nav-item" data-page="positionnement">Positionnement</li>
         <li class="nav-item dropdown">
           <span class="dropdown-trigger">Séances</span>
           <div class="dropdown-content">
@@ -49,11 +50,56 @@ const headerTemplate = `
           </div>
         </li>
         <li class="nav-item" data-page="podcast">Podcast</li>
-        <li class="nav-item">Newsletter</li>
       </ul>
     </nav>
     <div class="mobile-menu-overlay"></div>
   </header>
+`
+
+const footerTemplate = `
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>Heart Resonance – Maria Huizar</h3>
+        <p class="footer-tagline">Clairvoyance consciente • Accompagnement • Transmission</p>
+      </div>
+      
+      <div class="footer-links">
+        <a href="#" class="footer-link">CGV</a>
+        <span class="footer-separator">|</span>
+        <a href="#" class="footer-link">Politique de confidentialité</a>
+      </div>
+      
+      <div class="footer-social">
+        <a href="#" class="social-link" aria-label="Instagram">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+        <a href="#" class="social-link" aria-label="Facebook">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+          </svg>
+        </a>
+        <a href="#" class="social-link" aria-label="Spotify">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M8 11.5c2.5 1.5 4.5 1.5 7 0M8 15c2.5 1.5 4.5 1.5 7 0M8 8c2.5 1.5 4.5 1.5 7 0"></path>
+          </svg>
+        </a>
+      </div>
+      
+      <div class="footer-newsletter">
+        <button class="btn-newsletter" data-page="newsletter">Newsletter – S'inscrire</button>
+      </div>
+      
+      <div class="footer-copyright">
+        <p>&copy; 2026 Heart Resonance. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
 `
 
 const homePageTemplate = `
@@ -62,69 +108,69 @@ const homePageTemplate = `
   <div class="banner">
     <div class="banner-overlay"></div>
     <div class="banner-text">
-      <h1>Heart Resonance</h1>
       <p class="subtitle">
-        Un accompagnement pour se reconnecter à soi, écouter ce qui vibre juste,<br>
-        et avancer avec plus de clarté et de présence.
+        Un accompagnement pour se reconnecter à soi, écouter ce qui vibre juste et avancer avec plus de clarté et de présence.
       </p>
       <p class="quote">
-        « Il ne s'agit pas de devenir quelqu'un d'autre. <br>Il s'agit de se souvenir de qui vous êtes. »
+        « Il ne s'agit pas de devenir quelqu'un d'autre.<br>Il s'agit de se souvenir de qui vous êtes. »
       </p>
     </div>
   </div>
 
-  <section class="sections-overview">
-    <div class="sections-container">
-      <div class="section-item">
-        <div class="section-content">
-          <div class="section-image">
-            <img src="./HUIZAR-Maria.jpg" alt="Maria HUIZAR" />
-          </div>
-          <div class="section-text">
-            <h3>Maria HUIZAR</h3>
-            <p>Découvrez mon parcours, mon approche et ce qui m'anime dans l'accompagnement.</p>
-          </div>
-        </div>
-      </div>
-      <div class="section-item">
-        <h3>Séances</h3>
-        <p>La rencontre de soi. Un accompagnement personnalisé pour explorer votre propre vérité.</p>
-      </div>
-      <div class="section-item">
-        <h3>Formations</h3>
-        <p>Des programmes structurés pour approfondir votre pratique et développer de nouvelles compétences.</p>
-      </div>
-      <div class="section-item">
-        <h3>Ateliers</h3>
-        <p>Des moments de partage et d'exploration en groupe pour avancer ensemble.</p>
-      </div>
-      <div class="section-item">
-        <h3>Livres</h3>
-        <p>Des ressources écrites pour approfondir votre réflexion et votre pratique.</p>
-      </div>
-      <div class="section-item">
-        <h3>Podcast</h3>
-        <p>Des conversations et réflexions à écouter pour nourrir votre cheminement.</p>
+  <section class="home-intro">
+    <div class="home-intro-content">
+      <p>
+        J'accompagne des personnes qui sentent que quelque chose se joue pour elles,
+        mais qui n'y voient pas toujours clair.
+      </p>
+      <p>
+        Mon travail consiste à mettre de la clarté là où tout est confus, à éclairer une situation
+        précise, et à développer une clairvoyance consciente, pour que les choix puissent se faire
+        avec plus de justesse.
+      </p>
+    </div>
+  </section>
+
+  <section class="home-approche">
+    <div class="home-approche-content">
+      <h2>MON APPROCHE</h2>
+      <p>
+        Mon accompagnement s'appuie principalement sur la clairvoyance consciente et le travail
+        avec les mémoires akashiques.
+      </p>
+      <p>
+        Il s'agit d'un espace d'écoute et de lecture subtile, où ce qui était confus, diffus ou resté en
+        arrière-plan peut être vu, nommé et accueilli. Lorsque ce qui était inconscient devient
+        conscient, les choix s'éclairent, l'action devient plus simple, et l'on peut avancer avec plus de
+        cohérence intérieure.
+      </p>
+      <p>
+        J'accompagne en séance individuelle, ainsi qu'en ateliers en présentiel ou à distance.
+        Si vous ressentez le besoin d'y voir plus clair dans une situation, vous pouvez me contacter.
+      </p>
+    </div>
+  </section>
+
+  <section class="home-podcast">
+    <div class="home-podcast-content">
+      <h2>PODCAST</h2>
+      <p>Des conversations et des réflexions à écouter pour nourrir votre cheminement.</p>
+      <div class="podcast-embed-home">
+        <iframe
+          data-testid="embed-iframe"
+          style="border-radius:12px"
+          src="https://open.spotify.com/embed/show/5I6swJXizcNQGlT66vDVIS?utm_source=generator&t=0"
+          width="100%"
+          height="352"
+          frameborder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
       </div>
     </div>
   </section>
 
-  <section class="newsletter">
-    <div class="newsletter-content">
-      <div class="newsletter-text">
-        <h2>LAISSEZ-VOUS INSPIRER</h2>
-        <p>
-          Recevez dans la Newsletter des réflexions sur l'accompagnement, l'écoute de soi et le développement intérieur.
-          Des partages d'expériences et des ressources pour avancer avec plus de clarté et de présence.
-        </p>
-      </div>
-      <div class="newsletter-form">
-        <input type="text" placeholder="PRÉNOM" class="newsletter-input" />
-        <input type="email" placeholder="EMAIL" class="newsletter-input" />
-        <button class="newsletter-button">S'INSCRIRE</button>
-      </div>
-    </div>
-  </section>
+  ${footerTemplate}
 `
 
 const mariaPageTemplate = `
@@ -137,7 +183,7 @@ const mariaPageTemplate = `
 
     <section class="maria-hero">
       <div class="maria-image-wrapper">
-        <img src="./HUIZAR-Maria.jpg" alt="Maria HUIZAR" class="maria-image" />
+        <img src="./HUIZAR-Maria.png" alt="Maria HUIZAR" class="maria-image" />
       </div>
       <div class="maria-intro">
         <h1>Ma présentation</h1>
@@ -210,6 +256,8 @@ const mariaPageTemplate = `
       </aside>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const voirClairPageTemplate = `
@@ -261,6 +309,8 @@ const voirClairPageTemplate = `
       </div>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const memoiresAkashiquesPageTemplate = `
@@ -304,6 +354,8 @@ const memoiresAkashiquesPageTemplate = `
       </div>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const reikiPageTemplate = `
@@ -379,6 +431,8 @@ const reikiPageTemplate = `
       </div>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const reprogrammationPageTemplate = `
@@ -439,8 +493,9 @@ const reprogrammationPageTemplate = `
       </div>
     </section>
   </main>
-`
 
+  ${footerTemplate}
+`
 
 const reikiUsuiPageTemplate = `
   ${headerTemplate}
@@ -531,6 +586,8 @@ const reikiUsuiPageTemplate = `
       </div>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const memoiresAkashiquesFormationsPageTemplate = `
@@ -619,6 +676,8 @@ const memoiresAkashiquesFormationsPageTemplate = `
       </div>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const canalisationPageTemplate = `
@@ -665,6 +724,8 @@ const canalisationPageTemplate = `
       </div>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const ateliersPageTemplate = `
@@ -693,6 +754,8 @@ const ateliersPageTemplate = `
       </div>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const atelier1PageTemplate = `
@@ -716,6 +779,8 @@ const atelier1PageTemplate = `
       </div>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const atelier2PageTemplate = `
@@ -739,6 +804,8 @@ const atelier2PageTemplate = `
       </div>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const livresPageTemplate = `
@@ -767,6 +834,8 @@ const livresPageTemplate = `
       </div>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const livre1PageTemplate = `
@@ -790,6 +859,8 @@ const livre1PageTemplate = `
       </div>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const livre2PageTemplate = `
@@ -813,6 +884,8 @@ const livre2PageTemplate = `
       </div>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const tarifsPageTemplate = `
@@ -1030,6 +1103,8 @@ const tarifsPageTemplate = `
       </div>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const podcastPageTemplate = `
@@ -1091,9 +1166,72 @@ const podcastPageTemplate = `
       </aside>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
-type Page = 'home' | 'maria' | 'seances' | 'voir-clair' | 'memoires-akashiques' | 'reiki' | 'reprogrammation' | 'tarifs' | 'reiki-usui' | 'memoires-akashiques-formations' | 'canalisation' | 'ateliers' | 'atelier-1' | 'atelier-2' | 'livres' | 'livre-1' | 'livre-2' | 'podcast'
+const positionnementPageTemplate = `
+  ${headerTemplate}
+
+  <main class="positionnement-page">
+    <div class="positionnement-back">
+      <button class="btn-back-home" data-page="home">← Retour à l'accueil</button>
+    </div>
+
+    <section class="positionnement-hero">
+      <h1>Positionnement</h1>
+      <p class="positionnement-subtitle">une clairvoyance au service de la conscience</p>
+    </section>
+
+    <section class="positionnement-content">
+      <div class="positionnement-card">
+        <p class="positionnement-intro">
+          J'ai fait le choix de me consacrer à la clairvoyance consciente.
+        </p>
+        
+        <p>
+          J'ai la capacité de percevoir des informations liées à l'avenir, mais j'ai choisi de ne pas
+          utiliser la clairvoyance dans une logique prédictive.
+        </p>
+        
+        <p>
+          Avec l'expérience, j'ai compris que rien n'est jamais écrit à l'avance. Les lectures
+          tournées vers le futur peuvent parfois enfermer : donner de faux espoirs, nourrir
+          l'attente, ou pousser à agir à contre-courant de soi, dans l'espoir de faire advenir un
+          résultat.
+        </p>
+        
+        <p>
+          Peu à peu, j'ai réalisé que cette manière de faire n'aidait pas réellement à évoluer. Elle
+          pouvait même éloigner la personne de sa propre capacité d'action, de son discernement
+          et de sa responsabilité intérieure.
+        </p>
+        
+        <p>
+          Aujourd'hui, j'utilise la clairvoyance comme un outil de conscience.
+          Non pas pour dire ce qui va arriver, mais pour éclairer ce qui se joue ici et maintenant.
+          Observer les dynamiques à l'œuvre, les schémas répétitifs, les zones de tension ou de
+          bascule, afin que chacun puisse avancer en conscience, à partir de lui-même.
+        </p>
+        
+        <p>
+          Les mémoires akashiques, la numérologie et le dialogue avec le Soi sont pour moi des
+          supports de lecture et de compréhension, au service de l'évolution individuelle. Ils
+          n'imposent rien, ne tranchent pas, ne décident pas à la place de la personne.
+        </p>
+        
+        <p>
+          Je n'indique pas un chemin à suivre. Je mets en lumière ce qui peut être vu, pour que
+          chacun puisse faire ses propres choix, librement et en responsabilité.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  ${footerTemplate}
+`
+
+type Page = 'home' | 'maria' | 'seances' | 'voir-clair' | 'memoires-akashiques' | 'reiki' | 'reprogrammation' | 'tarifs' | 'reiki-usui' | 'memoires-akashiques-formations' | 'canalisation' | 'ateliers' | 'atelier-1' | 'atelier-2' | 'livres' | 'livre-1' | 'livre-2' | 'podcast' | 'positionnement'
 
 function render(page: Page) {
   // reset animation
@@ -1133,6 +1271,8 @@ function render(page: Page) {
     app.innerHTML = livre1PageTemplate
   } else if (page === 'livre-2') {
     app.innerHTML = livre2PageTemplate
+  } else if (page === 'positionnement') {
+    app.innerHTML = positionnementPageTemplate
   } else {
     app.innerHTML = podcastPageTemplate
   }
@@ -1155,6 +1295,12 @@ function attachNavigation() {
   mariaItem?.addEventListener('click', (event) => {
     event.preventDefault()
     render('maria')
+  })
+
+  const positionnementItem = document.querySelector<HTMLElement>('.nav-item[data-page="positionnement"]')
+  positionnementItem?.addEventListener('click', (event) => {
+    event.preventDefault()
+    render('positionnement')
   })
 
   const backHomeButton = document.querySelector<HTMLElement>('.btn-back-home')
