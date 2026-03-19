@@ -5,7 +5,7 @@ const app = document.querySelector<HTMLDivElement>('#app')!
 const headerTemplate = `
   <header class="header">
     <div class="logo-container" data-page="home">
-      <img src="./1-removebg-preview.png" alt="Heart Resonance Logo" class="logo-image" />
+      <img src="./1-removebg-preview.png" alt="Heart Resonance Logo" class="logo-image" style="height: 12rem;" />
       <span class="logo-title">Heart Resonance</span>
     </div>
     <button class="mobile-menu-btn">
@@ -49,7 +49,6 @@ const headerTemplate = `
           </div>
         </li>
         <li class="nav-item" data-page="podcast">Podcast</li>
-        <li class="nav-item">Newsletter</li>
       </ul>
     </nav>
     <div class="mobile-menu-overlay"></div>
@@ -62,7 +61,6 @@ const homePageTemplate = `
   <div class="banner">
     <div class="banner-overlay"></div>
     <div class="banner-text">
-      <h1>Heart Resonance</h1>
       <p class="subtitle">
         Un accompagnement pour se reconnecter à soi, écouter ce qui vibre juste,<br>
         et avancer avec plus de clarté et de présence.
@@ -78,7 +76,7 @@ const homePageTemplate = `
       <div class="section-item">
         <div class="section-content">
           <div class="section-image">
-            <img src="./HUIZAR-Maria.jpg" alt="Maria HUIZAR" />
+            <img src="./HUIZAR-Maria.png" alt="Maria HUIZAR" />
           </div>
           <div class="section-text">
             <h3>Maria HUIZAR</h3>
@@ -137,7 +135,7 @@ const mariaPageTemplate = `
 
     <section class="maria-hero">
       <div class="maria-image-wrapper">
-        <img src="./HUIZAR-Maria.jpg" alt="Maria HUIZAR" class="maria-image" />
+        <img src="./HUIZAR-Maria.png" alt="Maria HUIZAR" class="maria-image" />
       </div>
       <div class="maria-intro">
         <h1>Ma présentation</h1>
