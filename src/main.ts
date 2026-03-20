@@ -5,7 +5,7 @@ const app = document.querySelector<HTMLDivElement>('#app')!
 const headerTemplate = `
   <header class="header">
     <div class="logo-container" data-page="home">
-      <img src="./1-removebg-preview.png" alt="Heart Resonance Logo" class="logo-image" style="height: 12rem;" />
+      <img src="./1-removebg-preview.png" alt="Heart Resonance Logo" class="logo-image" style="height: 8rem;" />
       <span class="logo-title">Heart Resonance</span>
     </div>
     <button class="mobile-menu-btn">
@@ -53,6 +53,46 @@ const headerTemplate = `
     </nav>
     <div class="mobile-menu-overlay"></div>
   </header>
+`
+
+const footerTemplate = `
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>Heart Resonance – Maria Huizar</h3>
+        <p class="footer-tagline">Clairvoyance consciente • Accompagnement • Transmission</p>
+      </div>
+      
+      <div class="footer-links">
+        <a href="#" data-page="cgv" class="footer-link">CGV</a>
+        <span class="footer-separator">/</span>
+        <a href="#" data-page="privacy" class="footer-link">Politique de confidentialité</a>
+        <span class="footer-separator">/</span>
+        <a href="#" data-page="mentions" class="footer-link">Mentions légales</a>
+      </div>
+      
+      <div class="footer-social">
+        <a href="#" class="social-icon" aria-label="Instagram">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="Facebook">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="Spotify">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M8 12c2.5 1 5.5 1 8 0M8 16c3 1 6 1 9 0M8 8c4 1 7 1 10 0"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
 `
 
 const homePageTemplate = `
@@ -107,22 +147,7 @@ const homePageTemplate = `
     </div>
   </section>
 
-  <section class="newsletter">
-    <div class="newsletter-content">
-      <div class="newsletter-text">
-        <h2>LAISSEZ-VOUS INSPIRER</h2>
-        <p>
-          Recevez dans la Newsletter des réflexions sur l'accompagnement, l'écoute de soi et le développement intérieur.
-          Des partages d'expériences et des ressources pour avancer avec plus de clarté et de présence.
-        </p>
-      </div>
-      <div class="newsletter-form">
-        <input type="text" placeholder="PRÉNOM" class="newsletter-input" />
-        <input type="email" placeholder="EMAIL" class="newsletter-input" />
-        <button class="newsletter-button">S'INSCRIRE</button>
-      </div>
-    </div>
-  </section>
+  ${footerTemplate}
 `
 
 const mariaPageTemplate = `
@@ -208,6 +233,8 @@ const mariaPageTemplate = `
       </aside>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const voirClairPageTemplate = `
@@ -259,6 +286,8 @@ const voirClairPageTemplate = `
       </div>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const memoiresAkashiquesPageTemplate = `
@@ -302,6 +331,8 @@ const memoiresAkashiquesPageTemplate = `
       </div>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const reikiPageTemplate = `
@@ -377,6 +408,8 @@ const reikiPageTemplate = `
       </div>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const reprogrammationPageTemplate = `
@@ -437,8 +470,9 @@ const reprogrammationPageTemplate = `
       </div>
     </section>
   </main>
-`
 
+  ${footerTemplate}
+`
 
 const reikiUsuiPageTemplate = `
   ${headerTemplate}
@@ -529,6 +563,8 @@ const reikiUsuiPageTemplate = `
       </div>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const memoiresAkashiquesFormationsPageTemplate = `
@@ -617,6 +653,8 @@ const memoiresAkashiquesFormationsPageTemplate = `
       </div>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const canalisationPageTemplate = `
@@ -663,6 +701,8 @@ const canalisationPageTemplate = `
       </div>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const ateliersPageTemplate = `
@@ -691,6 +731,8 @@ const ateliersPageTemplate = `
       </div>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const atelier1PageTemplate = `
@@ -714,6 +756,8 @@ const atelier1PageTemplate = `
       </div>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const atelier2PageTemplate = `
@@ -737,6 +781,8 @@ const atelier2PageTemplate = `
       </div>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const livresPageTemplate = `
@@ -765,6 +811,8 @@ const livresPageTemplate = `
       </div>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const livre1PageTemplate = `
@@ -788,6 +836,8 @@ const livre1PageTemplate = `
       </div>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const livre2PageTemplate = `
@@ -811,6 +861,8 @@ const livre2PageTemplate = `
       </div>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const tarifsPageTemplate = `
@@ -1028,6 +1080,8 @@ const tarifsPageTemplate = `
       </div>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
 const podcastPageTemplate = `
@@ -1089,9 +1143,335 @@ const podcastPageTemplate = `
       </aside>
     </section>
   </main>
+
+  ${footerTemplate}
 `
 
-type Page = 'home' | 'maria' | 'seances' | 'voir-clair' | 'memoires-akashiques' | 'reiki' | 'reprogrammation' | 'tarifs' | 'reiki-usui' | 'memoires-akashiques-formations' | 'canalisation' | 'ateliers' | 'atelier-1' | 'atelier-2' | 'livres' | 'livre-1' | 'livre-2' | 'podcast'
+const mentionsPageTemplate = `
+  ${headerTemplate}
+
+  <main class="mentions-page">
+    <div class="mentions-back">
+      <button class="btn-back-home" data-page="home">← Retour à l'accueil</button>
+    </div>
+
+    <section class="mentions-content">
+      <h1>MENTIONS LÉGALES – HEART RESONANCE MARIA</h1>
+      
+      <div class="mentions-section">
+        <h2>Éditeur du site :</h2>
+        <p>Maria Huizar</p>
+        <p>Activité exercée au sein de la coopérative REGATE (CAE)</p>
+        <p>15 rue des Métiers – 81100 Castres</p>
+        <p>SIRET : à compléter</p>
+      </div>
+
+      <div class="mentions-section">
+        <h2>Site internet :</h2>
+        <p>heart-resonance.com</p>
+      </div>
+
+      <div class="mentions-section">
+        <h2>Responsable de publication :</h2>
+        <p>Maria Huizar</p>
+      </div>
+
+      <div class="mentions-section">
+        <h2>Hébergement :</h2>
+        <p>GitHub Pages (GitHub, Inc.)</p>
+        <p>88 Colin P Kelly Jr St</p>
+        <p>San Francisco, CA 94107, États-Unis</p>
+      </div>
+
+      <div class="mentions-section">
+        <h2>Propriété intellectuelle :</h2>
+        <p>L'ensemble des contenus présents sur ce site (textes, images, audios, vidéos, logos) est protégé.</p>
+        <p>Toute reproduction ou utilisation sans autorisation est interdite.</p>
+      </div>
+
+      <div class="mentions-section">
+        <h2>Responsabilité :</h2>
+        <p>Les informations diffusées sur ce site sont fournies à titre informatif.</p>
+        <p>Maria Huizar ne peut être tenue responsable de l'utilisation faite des contenus.</p>
+      </div>
+
+      <div class="mentions-section">
+        <h2>Données personnelles :</h2>
+        <p>Les données collectées sont traitées conformément à la politique de confidentialité disponible sur le site.</p>
+      </div>
+
+      <div class="mentions-section">
+        <h2>Contact :</h2>
+        <p>contact@heart-resonance.com</p>
+      </div>
+    </section>
+  </main>
+
+  ${footerTemplate}
+`
+
+const cgvPageTemplate = `
+  ${headerTemplate}
+
+  <main class="cgv-page">
+    <div class="cgv-back">
+      <button class="btn-back-home" data-page="home">← Retour à l'accueil</button>
+    </div>
+
+    <section class="cgv-content">
+      <h1>CONDITIONS GÉNÉRALES DE VENTE ET D'UTILISATION</h1>
+      <h2>Heart Resonance – Maria</h2>
+      
+      <div class="cgv-download">
+        <a href="./CGV_Heart_Resonance_Maria_MAJ 18-03-25.pdf" download class="download-btn">
+          <span class="download-icon">📄</span>
+          Télécharger les CGV en PDF
+        </a>
+      </div>
+      
+      <div class="cgv-section">
+        <h3>ARTICLE 1 – IDENTIFICATION ET CADRE GÉNÉRAL</h3>
+        <p>Les présentes Conditions Générales de Vente et d'Utilisation (CGVU) définissent le cadre dans lequel sont proposés les accompagnements, ateliers, formations, lectures akashiques, séances de Reiki, reprogrammations des mémoires cellulaires, apprentissages de la canalisation, contenus numériques, podcasts, publications, ouvrages et outils symboliques développés sous la marque Heart Resonance – Maria Huizar.</p>
+        <p>L'activité est exercée par Maria Huizar, dans le cadre de la coopérative d'activité et d'emploi REGATE, qui assure notamment la gestion administrative, contractuelle et la facturation.</p>
+        <p>Les présentes CGVU s'appliquent à toute commande, réservation, inscription ou utilisation des services proposés, via le site internet ou tout autre canal.</p>
+        <p>Toute validation implique l'acceptation pleine, entière et sans réserve des présentes CGVU.</p>
+      </div>
+
+      <div class="cgv-section">
+        <h3>ARTICLE 2 – NATURE DES PRESTATIONS</h3>
+        <p>Les prestations proposées incluent notamment :</p>
+        <ul>
+          <li>les accompagnements individuels,</li>
+          <li>les lectures des mémoires akashiques,</li>
+          <li>les séances de Reiki,</li>
+          <li>les reprogrammations des mémoires cellulaires,</li>
+          <li>les ateliers et formations d'apprentissage de la canalisation et de la connexion intuitive,</li>
+          <li>les contenus éditoriaux et outils symboliques.</li>
+        </ul>
+        <p>Elles s'inscrivent dans une démarche de développement personnel, de clarification consciente et d'exploration énergétique.</p>
+        <p>Elles ne constituent pas un acte médical, une psychothérapie, un diagnostic, un traitement thérapeutique ni une pratique divinatoire au sens juridique du terme.</p>
+      </div>
+
+      <div class="cgv-section">
+        <h3>ARTICLE 3 – LECTURES ET CANALISATION</h3>
+        <p>Les lectures akashiques et pratiques de canalisation proposées reflètent des dynamiques et potentiels observés à l'instant présent. Leur évolution dépend des choix et actions de la personne.</p>
+        <p>Les indications temporelles éventuellement évoquées constituent des estimations liées aux dynamiques actuelles et ne représentent ni une prédiction certaine ni un engagement de résultat.</p>
+        <p>Les apprentissages proposés visent à développer la présence à soi, l'écoute intuitive et le discernement personnel. Ils ne garantissent pas l'acquisition d'une capacité spécifique ni d'un résultat déterminé.</p>
+        <p>Ces pratiques ne remplacent en aucun cas un avis médical, psychologique ou thérapeutique.</p>
+      </div>
+
+      <div class="cgv-section">
+        <h3>ARTICLE 4 – RESPONSABILITÉ</h3>
+        <p>Chaque participant demeure pleinement responsable de ses décisions, interprétations et engagements personnels.</p>
+        <p>La responsabilité de Maria Huizar ne peut être engagée pour les conséquences directes ou indirectes résultant des choix effectués à la suite d'un accompagnement, d'une formation ou de l'utilisation d'un contenu proposé.</p>
+        <p>Aucune prestation n'emporte obligation de résultat.</p>
+      </div>
+
+      <div class="cgv-section">
+        <h3>ARTICLE 5 – MANIFESTATIONS ÉMOTIONNELLES ET ÉNERGÉTIQUES</h3>
+        <p>Les accompagnements, séances énergétiques et pratiques proposées peuvent susciter des réactions émotionnelles ou physiques passagères.</p>
+        <p>En cas de fragilité psychologique ou de situation nécessitant un suivi médical ou thérapeutique, il appartient à la personne de consulter un professionnel de santé compétent.</p>
+        <p>Maria Huizar se réserve le droit d'interrompre, d'ajuster ou de refuser une séance si la situation dépasse son champ de compétence.</p>
+      </div>
+
+      <div class="cgv-section">
+        <h3>ARTICLE 6 – CONTENUS ÉDITORIAUX ET OUTILS SYMBOLIQUES</h3>
+        <p>Les ouvrages, podcasts, publications et outils symboliques ont pour finalité de soutenir une réflexion personnelle et une présence consciente à soi.</p>
+        <p>Ils ne constituent ni une prédiction, ni une annonce d'événement futur, ni une garantie de transformation.</p>
+      </div>
+
+      <div class="cgv-section">
+        <h3>ARTICLE 7 – PROPRIÉTÉ INTELLECTUELLE</h3>
+        <p>L'ensemble des contenus, textes, audios, visuels, supports pédagogiques, outils, méthodes et créations éditoriales est protégé par le droit d'auteur.</p>
+        <p>Toute reproduction, diffusion ou exploitation sans autorisation écrite préalable est interdite.</p>
+      </div>
+
+      <div class="cgv-section">
+        <h3>ARTICLE 8 – COMMANDE ET VALIDATION</h3>
+        <p>La commande peut s'effectuer via le site internet, par devis, par échange écrit ou par tout autre moyen proposé.</p>
+        <p>La commande est considérée comme ferme et définitive à compter :</p>
+        <ul>
+          <li>du paiement total ou partiel,</li>
+          <li>ou de l'acceptation du devis.</li>
+        </ul>
+        <p>Heart Resonance se réserve le droit de refuser une demande si elle ne relève pas de son champ d'intervention.</p>
+      </div>
+
+      <div class="cgv-section">
+        <h3>ARTICLE 9 – CONDITIONS FINANCIÈRES</h3>
+        <p>Les tarifs sont indiqués en euros et précisés sur les supports de vente ou devis.</p>
+        <p>Le règlement valide l'inscription ou l'accès aux prestations.</p>
+        <p>Le paiement peut être effectué par paiement en ligne, virement bancaire, chèque ou espèces.</p>
+        <p>Sauf accord particulier, les prestations sont dues avant leur réalisation.</p>
+        <p><strong>Conformément aux obligations légales :</strong></p>
+        <p>En cas de retard de paiement, des pénalités pourront être appliquées.</p>
+        <p>Une indemnité forfaitaire de 40 € pour frais de recouvrement pourra être exigée (article D.441-5 du Code de commerce).</p>
+      </div>
+
+      <div class="cgv-section">
+        <h3>ARTICLE 10 – ANNULATION, REPORT ET ABSENCE</h3>
+        <p>Toute annulation est possible jusqu'à 72 heures avant la prestation.</p>
+        <p><strong>Passé ce délai :</strong></p>
+        <ul>
+          <li>la prestation est due</li>
+          <li>aucun remboursement ne sera effectué</li>
+        </ul>
+        <p>Un report peut être proposé à titre exceptionnel, sans obligation.</p>
+        <p><strong>En cas d'absence sans prévenir :</strong></p>
+        <ul>
+          <li>la séance est due intégralement</li>
+        </ul>
+      </div>
+
+      <div class="cgv-section">
+        <h3>ARTICLE 11 – PRESTATIONS SUR PLUSIEURS SÉANCES / PROGRAMMES</h3>
+        <p>Les accompagnements, formations, ateliers ou programmes impliquent :</p>
+        <ul>
+          <li>une réservation de créneaux</li>
+          <li>une organisation spécifique</li>
+        </ul>
+        <p><strong>En conséquence :</strong></p>
+        <p>L'engagement est ferme.</p>
+        <p>Aucun remboursement ne pourra être exigé en cas :</p>
+        <ul>
+          <li>d'arrêt anticipé</li>
+          <li>de non-utilisation</li>
+          <li>de changement de situation</li>
+        </ul>
+        <p>(Sauf dispositions légales obligatoires contraires)</p>
+      </div>
+
+      <div class="cgv-section">
+        <h3>ARTICLE 12 – DROIT DE RÉTRACTATION</h3>
+        <p>Conformément au droit de la consommation :</p>
+        <p>Le client dispose d'un délai de 14 jours pour exercer son droit de rétractation.</p>
+        <p><strong>Toutefois, ce droit ne s'applique plus lorsque :</strong></p>
+        <ul>
+          <li>la prestation a été réalisée avant la fin du délai</li>
+          <li>ou l'accès à un contenu numérique a été fourni immédiatement</li>
+        </ul>
+        <p>En validant sa commande, le client accepte :</p>
+        <ul>
+          <li>l'exécution immédiate</li>
+          <li>la renonciation à son droit de rétractation dans ces cas</li>
+        </ul>
+      </div>
+
+      <div class="cgv-section">
+        <h3>ARTICLE 13 – CONTENUS NUMÉRIQUES</h3>
+        <p>Les contenus numériques sont strictement personnels.</p>
+        <p>Toute reproduction, partage ou diffusion est interdite.</p>
+        <p><strong>En cas d'accès immédiat :</strong></p>
+        <ul>
+          <li>aucun remboursement ne pourra être exigé</li>
+        </ul>
+      </div>
+
+      <div class="cgv-section">
+        <h3>ARTICLE 14 – RESPONSABILITÉ LIMITÉE</h3>
+        <p>La responsabilité de Maria Huizar est strictement limitée au montant de la prestation réglée.</p>
+        <p>L'activité est couverte par une assurance Responsabilité Civile Professionnelle via REGATE.</p>
+      </div>
+
+      <div class="cgv-section">
+        <h3>ARTICLE 15 – DONNÉES PERSONNELLES</h3>
+        <p>Les données collectées sont utilisées uniquement pour :</p>
+        <ul>
+          <li>la gestion client</li>
+          <li>la relation commerciale</li>
+          <li>l'organisation des prestations</li>
+        </ul>
+        <p>Conformément au RGPD.</p>
+        <p>La politique de confidentialité est disponible sur le site.</p>
+      </div>
+
+      <div class="cgv-section">
+        <h3>ARTICLE 16 – MÉDIATION DE LA CONSOMMATION</h3>
+        <p>En cas de litige, une solution amiable sera recherchée en priorité.</p>
+        <p>Conformément au Code de la consommation, le client peut recourir gratuitement à un médiateur :</p>
+        <p>CM2C – Centre de la Médiation de la Consommation de Conciliateurs de Justice<br>
+        39 rue Emile Zola – 81100 Castres</p>
+      </div>
+
+      <div class="cgv-section">
+        <h3>ARTICLE 17 – DROIT APPLICABLE</h3>
+        <p>Les présentes CGVU sont soumises au droit français.</p>
+        <p>À défaut d'accord amiable, le litige pourra être porté devant les juridictions compétentes du ressort du Tribunal de commerce de Castres.</p>
+      </div>
+    </section>
+  </main>
+
+  ${footerTemplate}
+`
+
+const privacyPageTemplate = `
+  ${headerTemplate}
+
+  <main class="privacy-page">
+    <div class="privacy-back">
+      <button class="btn-back-home" data-page="home">← Retour à l'accueil</button>
+    </div>
+
+    <section class="privacy-content">
+      <h1>POLITIQUE DE CONFIDENTIALITÉ – HEART RESONANCE MARIA</h1>
+      
+      <div class="privacy-section">
+        <h2>1. QUI SUIS-JE ?</h2>
+        <p>Maria Huizar – Activité au sein de la coopérative REGATE</p>
+        <p>Site : heart-resonance.com</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>2. POURQUOI TES DONNÉES SONT COLLECTÉES</h2>
+        <p>Répondre aux demandes, organiser les séances, gérer les paiements, suivi client.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>3. DONNÉES COLLECTÉES</h2>
+        <p>Nom, prénom, email, téléphone, informations nécessaires à l'accompagnement.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>4. DONNÉES SENSIBLES</h2>
+        <p>Données personnelles partagées dans le cadre des séances restent strictement confidentielles.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>5. UTILISATION</h2>
+        <p>Aucune revente ni partage des données sauf obligation légale.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>6. DURÉE DE CONSERVATION</h2>
+        <p>Durée nécessaire à la relation client.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>7. SÉCURITÉ</h2>
+        <p>Accès limité et outils sécurisés.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>8. TES DROITS</h2>
+        <p>Accès, rectification, suppression, opposition, portabilité.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>9. CONTACT</h2>
+        <p>contact@heart-resonance.com</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>10. ÉVOLUTION</h2>
+        <p>Politique modifiable à tout moment.</p>
+      </div>
+    </section>
+  </main>
+
+  ${footerTemplate}
+`
+
+type Page = 'home' | 'maria' | 'seances' | 'voir-clair' | 'memoires-akashiques' | 'reiki' | 'reprogrammation' | 'tarifs' | 'reiki-usui' | 'memoires-akashiques-formations' | 'canalisation' | 'ateliers' | 'atelier-1' | 'atelier-2' | 'livres' | 'livre-1' | 'livre-2' | 'podcast' | 'cgv' | 'privacy' | 'mentions'
 
 function render(page: Page) {
   // reset animation
@@ -1131,6 +1511,12 @@ function render(page: Page) {
     app.innerHTML = livre1PageTemplate
   } else if (page === 'livre-2') {
     app.innerHTML = livre2PageTemplate
+  } else if (page === 'privacy') {
+    app.innerHTML = privacyPageTemplate
+  } else if (page === 'cgv') {
+    app.innerHTML = cgvPageTemplate
+  } else if (page === 'mentions') {
+    app.innerHTML = mentionsPageTemplate
   } else {
     app.innerHTML = podcastPageTemplate
   }
@@ -1331,6 +1717,18 @@ function attachNavigation() {
         navMenu?.classList.remove('mobile-open')
         overlay?.classList.remove('show')
         document.body.classList.remove('menu-open')
+      }
+    })
+  })
+  
+  // Handle footer links
+  const footerLinks = document.querySelectorAll<HTMLElement>('.footer-link[data-page]')
+  footerLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault()
+      const targetPage = link.getAttribute('data-page')
+      if (targetPage) {
+        render(targetPage as Page)
       }
     })
   })
