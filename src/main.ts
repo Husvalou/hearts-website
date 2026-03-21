@@ -102,50 +102,38 @@ const homePageTemplate = `
   <div class="banner">
     <div class="banner-overlay"></div>
     <div class="banner-text">
+      <h1>HEART RESONANCE</h1>
       <p class="subtitle">
-        Un accompagnement pour se reconnecter à soi, écouter ce qui vibre juste,<br>
-        et avancer avec plus de clarté et de présence.
+        Un accompagnement pour se reconnecter à soi, écouter ce qui vibre juste et avancer avec plus de clarté et de présence.
       </p>
       <p class="quote">
-        « Il ne s'agit pas de devenir quelqu'un d'autre. <br>Il s'agit de se souvenir de qui vous êtes. »
+        « Il ne s'agit pas de devenir quelqu'un d'autre.<br>
+        Il s'agit de se souvenir de qui vous êtes. »
       </p>
     </div>
   </div>
 
-  <section class="sections-overview">
-    <div class="sections-container">
-      <div class="section-item">
-        <div class="section-content">
-          <div class="section-image">
-            <img src="./HUIZAR-Maria.png" alt="Maria HUIZAR" />
-          </div>
-          <div class="section-text">
-            <h3>Maria HUIZAR</h3>
-            <p>Découvrez mon parcours, mon approche et ce qui m'anime dans l'accompagnement.</p>
-          </div>
-        </div>
-      </div>
-      <div class="section-item">
-        <h3>Séances</h3>
-        <p>La rencontre de soi. Un accompagnement personnalisé pour explorer votre propre vérité.</p>
-      </div>
-      <div class="section-item">
-        <h3>Formations</h3>
-        <p>Des programmes structurés pour approfondir votre pratique et développer de nouvelles compétences.</p>
-      </div>
-      <div class="section-item">
-        <h3>Ateliers</h3>
-        <p>Des moments de partage et d'exploration en groupe pour avancer ensemble.</p>
-      </div>
-      <div class="section-item">
-        <h3>Livres</h3>
-        <p>Des ressources écrites pour approfondir votre réflexion et votre pratique.</p>
-      </div>
-      <div class="section-item">
-        <h3>Podcast</h3>
-        <p>Des conversations et réflexions à écouter pour nourrir votre cheminement.</p>
-      </div>
+  <section class="home-content">
+    <div class="home-intro">
+      <p>J'accompagne des personnes qui sentent que quelque chose se joue pour elles, mais qui n'y voient pas toujours clair.</p>
+      <p>Mon travail consiste à mettre de la clarté là où tout est confus, à éclairer une situation précise, et à développer une clairvoyance consciente, pour que les choix puissent se faire avec plus de justesse.</p>
     </div>
+
+    <div class="home-divider">---</div>
+
+    <section class="home-approach">
+      <h2>MON APPROCHE</h2>
+      <p>Mon accompagnement s'appuie principalement sur la clairvoyance consciente et le travail avec les mémoires akashiques.</p>
+      <p>Il s'agit d'un espace d'écoute et de lecture subtile, où ce qui était confus, diffus ou resté en arrière-plan peut être vu, nommé et accueilli. Lorsque ce qui était inconscient devient conscient, les choix s'éclairent, l'action devient plus simple, et l'on peut avancer avec plus de cohérence intérieure.</p>
+      <p>J'accompagne en séance individuelle, ainsi qu'en ateliers en présentiel ou à distance.</p>
+      <p>Si vous ressentez le besoin d'y voir plus clair dans une situation, vous pouvez me contacter.</p>
+    </section>
+
+    <section class="home-podcast">
+      <h2>PODCAST</h2>
+      <p>Des conversations et des réflexions à écouter pour nourrir votre cheminement.</p>
+      <button class="btn-podcast" data-page="podcast">Écouter le podcast</button>
+    </section>
   </section>
 
   ${footerTemplate}
@@ -1598,6 +1586,13 @@ function attachNavigation() {
 
   const podcastItem = document.querySelector<HTMLElement>('.nav-item[data-page="podcast"]')
   podcastItem?.addEventListener('click', (event) => {
+    event.preventDefault()
+    render('podcast')
+  })
+
+  // Add event listener for podcast button on homepage
+  const podcastButton = document.querySelector<HTMLElement>('.btn-podcast')
+  podcastButton?.addEventListener('click', (event) => {
     event.preventDefault()
     render('podcast')
   })
