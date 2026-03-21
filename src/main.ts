@@ -107,8 +107,7 @@ const homePageTemplate = `
         Un accompagnement pour se reconnecter à soi, écouter ce qui vibre juste et avancer avec plus de clarté et de présence.
       </p>
       <p class="quote">
-        « Il ne s'agit pas de devenir quelqu'un d'autre.<br>
-        Il s'agit de se souvenir de qui vous êtes. »
+        « Il ne s'agit pas de devenir quelqu'un d'autre. Il s'agit de se souvenir de qui vous êtes. »
       </p>
     </div>
   </div>
@@ -1612,6 +1611,12 @@ function attachNavigation() {
   tarifsItem?.addEventListener('click', (event) => {
     event.preventDefault()
     render('tarifs')
+  })
+
+  const positionnementItem = document.querySelector<HTMLElement>('.nav-item[data-page="positionnement"]')
+  positionnementItem?.addEventListener('click', (event) => {
+    event.preventDefault()
+    render('positionnement')
   })
 
   // Mobile menu functionality

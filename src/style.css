@@ -1012,6 +1012,107 @@ h1 {
   background: #4a4a4a;
 }
 
+.btn-podcast {
+  background: linear-gradient(135deg, #c9a35a 0%, #b8931f 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 0.6rem 1.5rem;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 1rem;
+  box-shadow: 0 4px 15px rgba(201, 163, 90, 0.3);
+  transition: all 0.3s ease;
+}
+.btn-podcast:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201, 163, 90, 0.4);
+  background: linear-gradient(135deg, #b8931f 0%, #a67f1a 100%);
+}
+
+/* Homepage layout */
+.home-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.home-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.home-intro p {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #4a4a4a;
+  margin-bottom: 1rem;
+}
+
+.home-divider {
+  text-align: center;
+  color: #c9a35a;
+  font-size: 1.2rem;
+  letter-spacing: 0.5rem;
+  margin: 2.5rem 0;
+}
+
+.home-approach {
+  margin-bottom: 3rem;
+}
+
+.home-approach h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #c9a35a;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.home-approach p {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #4a4a4a;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.home-podcast {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.home-podcast h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #c9a35a;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.home-podcast p {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.podcast-embed {
+  max-width: 600px;
+  margin: 0 auto 1rem;
+}
+
 .btn-rdv {
   background: #7a815c;
   color: white;
