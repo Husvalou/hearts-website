@@ -162,11 +162,10 @@ const mariaPageTemplate = `
         <img src="./HUIZAR-Maria.png" alt="Maria HUIZAR" class="maria-image" />
       </div>
       <div class="maria-intro">
-        <h1>Ma présentation</h1>
         <h2>Maria HUIZAR</h2>
         <p class="maria-intro-text">
-          Quand tout devient confus, ce n’est pas que vous ne voyez pas clair.<br />
-          C’est que vous percevez beaucoup de choses en même temps.<br />
+          Quand tout devient confus, ce n'est pas que vous ne voyez pas clair.<br />
+          C'est que vous percevez beaucoup de choses en même temps.<br />
           Mon accompagnement commence là.
         </p>
       </div>
@@ -175,29 +174,29 @@ const mariaPageTemplate = `
     <section class="maria-body">
       <div class="maria-content">
         <h3>Mon parcours</h3>
-        <p>Je m’appelle Maria.</p>
+        <p>Je m'appelle Maria.</p>
         <p>
-          Depuis longtemps, j’accompagne des personnes dans des moments où tout se mélange à l’intérieur. Des moments où l’on ressent beaucoup, où l’on comprend beaucoup, mais où il devient difficile de faire la différence entre intuition, émotion, fatigue intérieure et histoire personnelle.
+          Depuis longtemps, j'accompagne des personnes dans des moments où tout se mélange à l'intérieur. Des moments où l'on ressent beaucoup, où l'on comprend beaucoup, mais où il devient difficile de faire la différence entre intuition, émotion, fatigue intérieure et histoire personnelle.
         </p>
         <p>
-          Mon parcours s’est construit au contact direct de l’humain, dans des contextes très différents, souvent exigeants. J’ai été animatrice de radio, où j’ai créé et animé des émissions de radio, des espaces de parole et d’écoute. J’y ai appris à accueillir ce qui se dit, mais aussi ce qui ne se dit pas, à écouter au-delà des mots et à laisser une place aux émotions sans chercher à les contrôler.
+          Mon parcours s'est construit au contact direct de l'humain, dans des contextes très différents, souvent exigeants. J'ai été animatrice de radio, où j'ai créé et animé des émissions de radio, des espaces de parole et d'écoute. J'y ai appris à accueillir ce qui se dit, mais aussi ce qui ne se dit pas, à écouter au-delà des mots et à laisser une place aux émotions sans chercher à les contrôler.
         </p>
         <p>
-          J’ai ensuite travaillé comme professeure puis conseillère principale d’éducation pendant plus de quinze ans. J’ai accompagné des milliers d’adolescents, dans des périodes de construction, de débordement émotionnel, de silence, parfois de colère. Être là au quotidien, tenir une présence quand tout vacille, accompagner sans savoir à l’avance quoi répondre : ces années ont profondément forgé ma posture.
+          J'ai ensuite travaillé comme professeure puis conseillère principale d'éducation pendant plus de quinze ans. J'ai accompagné des milliers d'adolescents, dans des périodes de construction, de débordement émotionnel, de silence, parfois de colère. Être là au quotidien, tenir une présence quand tout vacille, accompagner sans savoir à l'avance quoi répondre : ces années ont profondément forgé ma posture.
         </p>
         <p>
-          En parallèle, j’ai formé et accompagné des publics très variés : des jeunes, des militaires, des agents de service hôtelier, mais aussi des professionnels engagés dans des métiers à forte responsabilité ou à forte charge émotionnelle. Mon travail portait sur le développement des compétences psychosociales, et en particulier sur la gestion des émotions, la posture relationnelle et la capacité à rester stable dans des contextes exigeants.
+          En parallèle, j'ai formé et accompagné des publics très variés : des jeunes, des militaires, des agents de service hôtelier, mais aussi des professionnels engagés dans des métiers à forte responsabilité ou à forte charge émotionnelle. Mon travail portait sur le développement des compétences psychosociales, et en particulier sur la gestion des émotions, la posture relationnelle et la capacité à rester stable dans des contextes exigeants.
         </p>
 
-        <h3>Aujourd’hui</h3>
+        <h3>Aujourd'hui</h3>
         <p>
-          Très tôt, en dehors de tout cadre institutionnel, des personnes sont venues me voir pour comprendre ce qu’elles vivaient, mettre de la clarté sur leurs ressentis, sortir de la confusion intérieure. Dès 2014, l’accompagnement faisait déjà partie de ma vie. En 2016, j’ai donné un cadre professionnel à ce qui existait déjà naturellement.
+          Très tôt, en dehors de tout cadre institutionnel, des personnes sont venues me voir pour comprendre ce qu'elles vivaient, mettre de la clarté sur leurs ressentis, sortir de la confusion intérieure. Dès 2014, l'accompagnement faisait déjà partie de ma vie. En 2016, j'ai donné un cadre professionnel à ce qui existait déjà naturellement.
         </p>
         <p>
-          Aujourd’hui, je suis coach de vie, thérapeute (au sens non médical du terme), lectrice des mémoires akashiques et praticienne en clairvoyance consciente. J’aide à voir clair, non pas pour dire quoi faire ou prédire l’avenir, mais pour éclairer ce qui se joue ici et maintenant : les schémas, les dynamiques, les zones de tension ou de bascule. J’ai notamment accompagné depuis 2016 des médecins, des thérapeutes, des praticiens des médecines douces, des sportifs de haut niveau, ainsi que des entrepreneurs et chefs d’entreprise.
+          Aujourd'hui, je suis coach de vie, thérapeute (au sens non médical du terme), lectrice des mémoires akashiques et praticienne en clairvoyance consciente. J'aide à voir clair, non pas pour dire quoi faire ou prédire l'avenir, mais pour éclairer ce qui se joue ici et maintenant : les schémas, les dynamiques, les zones de tension ou de bascule. J'ai notamment accompagné depuis 2016 des médecins, des thérapeutes, des praticiens des médecines douces, des sportifs de haut niveau, ainsi que des entrepreneurs et chefs d'entreprise.
         </p>
         <p>
-          Mon accompagnement est un espace où l’on peut ralentir, déposer ce qui est trop lourd, et retrouver un lien plus juste avec soi-même. J’accompagne des adultes, des particuliers, ainsi que des praticiens du bien-être et des professionnels qui ressentent le besoin d’affiner leur perception et de se faire confiance dans ce qu’ils perçoivent.
+          Mon accompagnement est un espace où l'on peut ralentir, déposer ce qui est trop lourd, et retrouver un lien plus juste avec soi-même. J'accompagne des adultes, des particuliers, ainsi que des praticiens du bien-être et des professionnels qui ressentent le besoin d'affiner leur perception et de se faire confiance dans ce qu'ils perçoivent.
         </p>
         <p>
           Ce que je propose est avant tout une rencontre. Un temps pour se retrouver. Et laisser émerger une clarté plus juste.
@@ -213,21 +212,18 @@ const mariaPageTemplate = `
 
       <aside class="maria-aside">
         <div class="maria-card">
-          <h4>En quelques mots</h4>
-          <ul>
-            <li>Coach de vie</li>
-            <li>Thérapeute (sens non médical)</li>
-            <li>Lectrice des mémoires akashiques</li>
-            <li>Praticienne en clairvoyance consciente</li>
-          </ul>
+          <h4>Qui je suis</h4>
+          <p>Praticienne en clairvoyance consciente, lectrice des mémoires akashiques et thérapeute au sens non médical.</p>
         </div>
 
         <div class="maria-card">
-          <h4>Qui j’accompagne</h4>
-          <p>
-            Adultes, particuliers, praticiens du bien-être, professionnels à forte charge émotionnelle ou responsabilité
-            qui ressentent le besoin d’affiner leur perception et de se faire confiance.
-          </p>
+          <h4>Qui j'accompagne</h4>
+          <p>J'accompagne les adultes qui ressentent le besoin de voir plus clair en eux, d'affiner leur perception et de développer leur clairvoyance consciente.</p>
+        </div>
+
+        <div class="maria-card">
+          <h4>Ce que cela leur permet</h4>
+          <p>Retrouver de la clarté, du discernement et une lecture plus juste de ce qu'ils traversent.</p>
         </div>
       </aside>
     </section>
@@ -1160,9 +1156,9 @@ const mentionsPageTemplate = `
       <div class="mentions-section">
         <h2>Éditeur du site :</h2>
         <p>Maria Huizar</p>
-        <p>Activité exercée au sein de la coopérative REGATE (CAE)</p>
+        <p>Activité exercée au sein de la coopérative REGATE</p>
         <p>15 rue des Métiers – 81100 Castres</p>
-        <p>SIRET : à compléter</p>
+        <p>SIRET : 42376651800074</p>
       </div>
 
       <div class="mentions-section">
@@ -1173,13 +1169,6 @@ const mentionsPageTemplate = `
       <div class="mentions-section">
         <h2>Responsable de publication :</h2>
         <p>Maria Huizar</p>
-      </div>
-
-      <div class="mentions-section">
-        <h2>Hébergement :</h2>
-        <p>GitHub Pages (GitHub, Inc.)</p>
-        <p>88 Colin P Kelly Jr St</p>
-        <p>San Francisco, CA 94107, États-Unis</p>
       </div>
 
       <div class="mentions-section">
@@ -1201,7 +1190,7 @@ const mentionsPageTemplate = `
 
       <div class="mentions-section">
         <h2>Contact :</h2>
-        <p>contact@heart-resonance.com</p>
+        <p>heart.resonance.mariahuizar@gmail.com</p>
       </div>
     </section>
   </main>
@@ -1497,7 +1486,7 @@ const privacyPageTemplate = `
 
       <div class="privacy-section">
         <h2>9. CONTACT</h2>
-        <p>contact@heart-resonance.com</p>
+        <p>heart.resonance.mariahuizar@gmail.com</p>
       </div>
 
       <div class="privacy-section">
