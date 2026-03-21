@@ -132,7 +132,18 @@ const homePageTemplate = `
     <section class="home-podcast">
       <h2>PODCAST</h2>
       <p>Des conversations et des réflexions à écouter pour nourrir votre cheminement.</p>
-      <button class="btn-podcast" data-page="podcast">Écouter le podcast</button>
+      <div class="podcast-embed">
+        <iframe
+          style="border-radius:12px"
+          src="https://open.spotify.com/embed/show/5I6swJXizcNQGlT66vDVIS?utm_source=generator&t=0"
+          width="100%"
+          height="352"
+          frameborder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+      </div>
+      <button class="btn-podcast" data-page="podcast">Voir plus d'épisodes</button>
     </section>
   </section>
 
