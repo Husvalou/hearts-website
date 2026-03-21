@@ -48,6 +48,7 @@ const headerTemplate = `
             <a href="#" data-page="livre-2">Livre 2</a>
           </div>
         </li>
+        <li class="nav-item" data-page="positionnement">Positionnement</li>
         <li class="nav-item" data-page="podcast">Podcast</li>
       </ul>
     </nav>
@@ -1210,6 +1211,46 @@ const mentionsPageTemplate = `
   ${footerTemplate}
 `
 
+const positionnementPageTemplate = `
+  ${headerTemplate}
+
+  <main class="positionnement-page">
+    <div class="positionnement-back">
+      <button class="btn-back-home" data-page="home">← Retour à l'accueil</button>
+    </div>
+
+    <section class="positionnement-content">
+      <h1>Mon positionnement : une clairvoyance au service de la conscience</h1>
+      
+      <div class="positionnement-intro">
+        <p>J'ai fait le choix de me consacrer à la clairvoyance consciente.</p>
+      </div>
+
+      <div class="positionnement-section">
+        <p>J'ai la capacité de percevoir des informations liées à l'avenir, mais j'ai choisi de ne pas utiliser la clairvoyance dans une logique prédictive.</p>
+        
+        <p>Avec l'expérience, j'ai compris que rien n'est jamais écrit à l'avance. Les lectures tournées vers le futur peuvent parfois enfermer : donner de faux espoirs, nourrir l'attente, ou pousser à agir à contre-courant de soi, dans l'espoir de faire advenir un résultat.</p>
+        
+        <p>Peu à peu, j'ai réalisé que cette manière de faire n'aidait pas réellement à évoluer. Elle pouvait même éloigner la personne de sa propre capacité d'action, de son discernement et de sa responsabilité intérieure.</p>
+      </div>
+
+      <div class="positionnement-section highlight">
+        <h2>Aujourd'hui, j'utilise la clairvoyance comme un outil de conscience.</h2>
+        <p>Non pas pour dire ce qui va arriver, mais pour éclairer ce qui se joue ici et maintenant.</p>
+        <p>Observer les dynamiques à l'œuvre, les schémas répétitifs, les zones de tension ou de bascule, afin que chacun puisse avancer en conscience, à partir de lui-même.</p>
+      </div>
+
+      <div class="positionnement-section">
+        <p>Les mémoires akashiques, la numérologie et le dialogue avec le Soi sont pour moi des supports de lecture et de compréhension, au service de l'évolution individuelle. Ils n'imposent rien, ne tranchent pas, ne décident pas à la place de la personne.</p>
+        
+        <p>Je n'indique pas un chemin à suivre. Je mets en lumière ce qui peut être vu, pour que chacun puisse faire ses propres choix, librement et en responsabilité.</p>
+      </div>
+    </section>
+  </main>
+
+  ${footerTemplate}
+`
+
 const cgvPageTemplate = `
   ${headerTemplate}
 
@@ -1471,7 +1512,7 @@ const privacyPageTemplate = `
   ${footerTemplate}
 `
 
-type Page = 'home' | 'maria' | 'seances' | 'voir-clair' | 'memoires-akashiques' | 'reiki' | 'reprogrammation' | 'tarifs' | 'reiki-usui' | 'memoires-akashiques-formations' | 'canalisation' | 'ateliers' | 'atelier-1' | 'atelier-2' | 'livres' | 'livre-1' | 'livre-2' | 'podcast' | 'cgv' | 'privacy' | 'mentions'
+type Page = 'home' | 'maria' | 'seances' | 'voir-clair' | 'memoires-akashiques' | 'reiki' | 'reprogrammation' | 'tarifs' | 'reiki-usui' | 'memoires-akashiques-formations' | 'canalisation' | 'ateliers' | 'atelier-1' | 'atelier-2' | 'livres' | 'livre-1' | 'livre-2' | 'podcast' | 'cgv' | 'privacy' | 'mentions' | 'positionnement'
 
 function render(page: Page) {
   // reset animation
@@ -1517,6 +1558,8 @@ function render(page: Page) {
     app.innerHTML = cgvPageTemplate
   } else if (page === 'mentions') {
     app.innerHTML = mentionsPageTemplate
+  } else if (page === 'positionnement') {
+    app.innerHTML = positionnementPageTemplate
   } else {
     app.innerHTML = podcastPageTemplate
   }
