@@ -73,19 +73,19 @@ const footerTemplate = `
       </div>
       
       <div class="footer-social">
-        <a href="#" class="social-icon" aria-label="Instagram">
+        <a href="https://www.instagram.com/heart.resonance.maria" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
           </svg>
         </a>
-        <a href="#" class="social-icon" aria-label="Facebook">
+        <a href="https://www.facebook.com/HeartResonanceMaria/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
           </svg>
         </a>
-        <a href="#" class="social-icon" aria-label="Spotify">
+        <a href="https://open.spotify.com/show/5I6swJXizcNQGlT66vDVIS" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Spotify">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="10"/>
             <path d="M8 12c2.5 1 5.5 1 8 0M8 16c3 1 6 1 9 0M8 8c4 1 7 1 10 0"/>
