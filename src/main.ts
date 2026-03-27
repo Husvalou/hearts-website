@@ -1233,7 +1233,7 @@ const positionnementPageTemplate = `
       </div>
 
       <div class="positionnement-section">
-        <p>Les mémoires akashiques, la numérologie et le dialogue avec le Soi sont pour moi des supports de lecture et de compréhension, au service de l'évolution individuelle. Ils n'imposent rien, ne tranchent pas, ne décident pas à la place de la personne.</p>
+        <p>Les mémoires akashiques, sont le dialogue avec le Soi sont pour moi des supports de lecture et de compréhension, au service de l'évolution individuelle. Ils n'imposent rien, ne tranchent pas, ne décident pas à la place de la personne.</p>
         
         <p>Je n'indique pas un chemin à suivre. Je mets en lumière ce qui peut être vu, pour que chacun puisse faire ses propres choix, librement et en responsabilité.</p>
       </div>
