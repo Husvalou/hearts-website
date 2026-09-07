@@ -29,20 +29,6 @@
             <a href="#" data-page="canalisation">Canalisation</a>
           </div>
         </li>
-        <li class="nav-item dropdown">
-          <span class="dropdown-trigger">Ateliers</span>
-          <div class="dropdown-content">
-            <a href="#" data-page="atelier-1">Atelier 1</a>
-            <a href="#" data-page="atelier-2">Atelier 2</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <span class="dropdown-trigger">Livres</span>
-          <div class="dropdown-content">
-            <a href="#" data-page="livre-1">Livre 1</a>
-            <a href="#" data-page="livre-2">Livre 2</a>
-          </div>
-        </li>
         <li class="nav-item" data-page="positionnement">Positionnement</li>
         <li class="nav-item" data-page="podcast">Podcast</li>
       </ul>
@@ -236,7 +222,7 @@
   </main>
 
   ${n}
-`,A=`
+`,S=`
   ${a}
 
   <main class="seances-page">
@@ -287,7 +273,7 @@
   </main>
 
   ${n}
-`,S=`
+`,A=`
   ${a}
 
   <main class="seances-page">
@@ -741,7 +727,7 @@
   </main>
 
   ${n}
-`,w=`
+`,D=`
   ${a}
 
   <main class="seances-page">
@@ -764,7 +750,7 @@
   </main>
 
   ${n}
-`,D=`
+`,w=`
   ${a}
 
   <main class="seances-page">
@@ -1031,8 +1017,8 @@
         <div class="seances-grid">
           <div class="seance-tarif">
             <h3>Séance voir clair en soi</h3>
-            <p class="tarif-price">60 €</p>
-            <p class="tarif-duration">1 h</p>
+            <p class="tarif-price">80 €</p>
+            <p class="tarif-duration">1 h 15</p>
           </div>
           <div class="seance-tarif">
             <h3>Séance de Reiki</h3>
@@ -1470,4 +1456,4 @@
   </main>
 
   ${n}
-`;function c(i){s.classList.remove("page-fade"),s.offsetWidth,i==="home"?s.innerHTML=R:i==="maria"?s.innerHTML=I:i==="voir-clair"?s.innerHTML=A:i==="memoires-akashiques"?s.innerHTML=S:i==="reiki"?s.innerHTML=k:i==="reprogrammation"?s.innerHTML=C:i==="tarifs"?s.innerHTML=H:i==="reiki-usui"?s.innerHTML=y:i==="memoires-akashiques-formations"?s.innerHTML=N:i==="canalisation"?s.innerHTML=M:i==="ateliers"?s.innerHTML=O:i==="atelier-1"?s.innerHTML=x:i==="atelier-2"?s.innerHTML=w:i==="livres"?s.innerHTML=D:i==="livre-1"?s.innerHTML=P:i==="livre-2"?s.innerHTML=U:i==="privacy"?s.innerHTML=V:i==="cgv"?s.innerHTML=G:i==="mentions"?s.innerHTML=z:i==="positionnement"?s.innerHTML=$:s.innerHTML=j,F(),window.scrollTo({top:0,behavior:"instant"}),s.classList.add("page-fade")}function F(){document.querySelector('.logo-container[data-page="home"]')?.addEventListener("click",e=>{e.preventDefault(),c("home")}),document.querySelector('.nav-item[data-page="maria"]')?.addEventListener("click",e=>{e.preventDefault(),c("maria")}),document.querySelector(".btn-back-home")?.addEventListener("click",e=>{e.preventDefault(),c("home")}),document.querySelector('.nav-item[data-page="seances"]')?.addEventListener("click",e=>{e.preventDefault(),c("seances")}),document.querySelector('.nav-item[data-page="podcast"]')?.addEventListener("click",e=>{e.preventDefault(),c("podcast")}),document.querySelector(".btn-podcast")?.addEventListener("click",e=>{e.preventDefault(),c("podcast")}),document.querySelector('.nav-item[data-page="tarifs"]')?.addEventListener("click",e=>{e.preventDefault(),c("tarifs")}),document.querySelector('.nav-item[data-page="positionnement"]')?.addEventListener("click",e=>{e.preventDefault(),c("positionnement")});const u=document.querySelector(".mobile-menu-btn"),d=document.querySelector(".nav-menu"),p=document.querySelector(".mobile-menu-overlay");function E(){const e=document.createElement("div");e.style.visibility="hidden",e.style.overflow="scroll",document.body.appendChild(e);const t=document.createElement("div");e.appendChild(t);const l=e.offsetWidth-t.offsetWidth;return e.parentNode?.removeChild(e),l}const L=E();document.documentElement.style.setProperty("--scrollbar-width",`${L}px`),u&&d&&p&&(u.addEventListener("click",()=>{u.classList.contains("open")?(u.classList.remove("open"),d.classList.remove("mobile-open"),p.classList.remove("show"),document.body.classList.remove("menu-open")):(u.classList.add("open"),d.classList.add("mobile-open"),p.classList.add("show"),document.body.classList.add("menu-open"))}),p.addEventListener("click",()=>{u.classList.remove("open"),d.classList.remove("mobile-open"),p.classList.remove("show"),document.body.classList.remove("menu-open")})),document.querySelectorAll(".dropdown").forEach(e=>{const t=e.querySelector(".dropdown-content");let l;window.innerWidth>600&&(e.addEventListener("mouseenter",()=>{clearTimeout(l),t?.classList.add("show")}),e.addEventListener("mouseleave",()=>{l=setTimeout(()=>{t?.classList.remove("show")},300)}),t?.addEventListener("mouseenter",()=>{clearTimeout(l)}),t?.addEventListener("mouseleave",()=>{l=setTimeout(()=>{t?.classList.remove("show")},300)}));const m=e.querySelector(".dropdown-trigger");m?.addEventListener("click",q=>{if(window.innerWidth<=600){q.preventDefault(),q.stopPropagation();const T=t?.classList.contains("show");document.querySelectorAll(".dropdown-content").forEach(v=>{v!==t&&v.classList.remove("show")}),document.querySelectorAll(".dropdown-trigger").forEach(v=>{v!==m&&v.classList.remove("open")}),T?(t?.classList.remove("show"),m?.classList.remove("open")):(t?.classList.add("show"),m?.classList.add("open"))}})}),document.querySelectorAll(".dropdown-content a").forEach(e=>{e.addEventListener("click",t=>{t.preventDefault(),t.stopPropagation();const l=e.getAttribute("data-page");l&&(document.querySelectorAll(".dropdown-content").forEach(m=>{m.classList.remove("show")}),window.innerWidth<=600&&(u?.classList.remove("open"),d?.classList.remove("mobile-open"),p?.classList.remove("show"),document.body.classList.remove("menu-open")),c(l))})}),document.querySelectorAll(".nav-item:not(.dropdown)").forEach(e=>{e.addEventListener("click",()=>{window.innerWidth<=600&&(u?.classList.remove("open"),d?.classList.remove("mobile-open"),p?.classList.remove("show"),document.body.classList.remove("menu-open"))})}),document.querySelectorAll(".footer-link[data-page]").forEach(e=>{e.addEventListener("click",t=>{t.preventDefault();const l=e.getAttribute("data-page");l&&c(l)})})}c("home");
+`;function c(i){s.classList.remove("page-fade"),s.offsetWidth,i==="home"?s.innerHTML=R:i==="maria"?s.innerHTML=I:i==="voir-clair"?s.innerHTML=S:i==="memoires-akashiques"?s.innerHTML=A:i==="reiki"?s.innerHTML=k:i==="reprogrammation"?s.innerHTML=C:i==="tarifs"?s.innerHTML=H:i==="reiki-usui"?s.innerHTML=y:i==="memoires-akashiques-formations"?s.innerHTML=N:i==="canalisation"?s.innerHTML=M:i==="ateliers"?s.innerHTML=O:i==="atelier-1"?s.innerHTML=x:i==="atelier-2"?s.innerHTML=D:i==="livres"?s.innerHTML=w:i==="livre-1"?s.innerHTML=P:i==="livre-2"?s.innerHTML=U:i==="privacy"?s.innerHTML=V:i==="cgv"?s.innerHTML=G:i==="mentions"?s.innerHTML=z:i==="positionnement"?s.innerHTML=$:s.innerHTML=j,F(),window.scrollTo({top:0,behavior:"instant"}),s.classList.add("page-fade")}function F(){document.querySelector('.logo-container[data-page="home"]')?.addEventListener("click",e=>{e.preventDefault(),c("home")}),document.querySelector('.nav-item[data-page="maria"]')?.addEventListener("click",e=>{e.preventDefault(),c("maria")}),document.querySelector(".btn-back-home")?.addEventListener("click",e=>{e.preventDefault(),c("home")}),document.querySelector('.nav-item[data-page="seances"]')?.addEventListener("click",e=>{e.preventDefault(),c("seances")}),document.querySelector('.nav-item[data-page="podcast"]')?.addEventListener("click",e=>{e.preventDefault(),c("podcast")}),document.querySelector(".btn-podcast")?.addEventListener("click",e=>{e.preventDefault(),c("podcast")}),document.querySelector('.nav-item[data-page="tarifs"]')?.addEventListener("click",e=>{e.preventDefault(),c("tarifs")}),document.querySelector('.nav-item[data-page="positionnement"]')?.addEventListener("click",e=>{e.preventDefault(),c("positionnement")});const u=document.querySelector(".mobile-menu-btn"),d=document.querySelector(".nav-menu"),p=document.querySelector(".mobile-menu-overlay");function E(){const e=document.createElement("div");e.style.visibility="hidden",e.style.overflow="scroll",document.body.appendChild(e);const t=document.createElement("div");e.appendChild(t);const l=e.offsetWidth-t.offsetWidth;return e.parentNode?.removeChild(e),l}const L=E();document.documentElement.style.setProperty("--scrollbar-width",`${L}px`),u&&d&&p&&(u.addEventListener("click",()=>{u.classList.contains("open")?(u.classList.remove("open"),d.classList.remove("mobile-open"),p.classList.remove("show"),document.body.classList.remove("menu-open")):(u.classList.add("open"),d.classList.add("mobile-open"),p.classList.add("show"),document.body.classList.add("menu-open"))}),p.addEventListener("click",()=>{u.classList.remove("open"),d.classList.remove("mobile-open"),p.classList.remove("show"),document.body.classList.remove("menu-open")})),document.querySelectorAll(".dropdown").forEach(e=>{const t=e.querySelector(".dropdown-content");let l;window.innerWidth>600&&(e.addEventListener("mouseenter",()=>{clearTimeout(l),t?.classList.add("show")}),e.addEventListener("mouseleave",()=>{l=setTimeout(()=>{t?.classList.remove("show")},300)}),t?.addEventListener("mouseenter",()=>{clearTimeout(l)}),t?.addEventListener("mouseleave",()=>{l=setTimeout(()=>{t?.classList.remove("show")},300)}));const m=e.querySelector(".dropdown-trigger");m?.addEventListener("click",q=>{if(window.innerWidth<=600){q.preventDefault(),q.stopPropagation();const T=t?.classList.contains("show");document.querySelectorAll(".dropdown-content").forEach(v=>{v!==t&&v.classList.remove("show")}),document.querySelectorAll(".dropdown-trigger").forEach(v=>{v!==m&&v.classList.remove("open")}),T?(t?.classList.remove("show"),m?.classList.remove("open")):(t?.classList.add("show"),m?.classList.add("open"))}})}),document.querySelectorAll(".dropdown-content a").forEach(e=>{e.addEventListener("click",t=>{t.preventDefault(),t.stopPropagation();const l=e.getAttribute("data-page");l&&(document.querySelectorAll(".dropdown-content").forEach(m=>{m.classList.remove("show")}),window.innerWidth<=600&&(u?.classList.remove("open"),d?.classList.remove("mobile-open"),p?.classList.remove("show"),document.body.classList.remove("menu-open")),c(l))})}),document.querySelectorAll(".nav-item:not(.dropdown)").forEach(e=>{e.addEventListener("click",()=>{window.innerWidth<=600&&(u?.classList.remove("open"),d?.classList.remove("mobile-open"),p?.classList.remove("show"),document.body.classList.remove("menu-open"))})}),document.querySelectorAll(".footer-link[data-page]").forEach(e=>{e.addEventListener("click",t=>{t.preventDefault();const l=e.getAttribute("data-page");l&&c(l)})})}c("home");

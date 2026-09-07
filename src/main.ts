@@ -33,20 +33,6 @@ const headerTemplate = `
             <a href="#" data-page="canalisation">Canalisation</a>
           </div>
         </li>
-        <li class="nav-item dropdown">
-          <span class="dropdown-trigger">Ateliers</span>
-          <div class="dropdown-content">
-            <a href="#" data-page="atelier-1">Atelier 1</a>
-            <a href="#" data-page="atelier-2">Atelier 2</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <span class="dropdown-trigger">Livres</span>
-          <div class="dropdown-content">
-            <a href="#" data-page="livre-1">Livre 1</a>
-            <a href="#" data-page="livre-2">Livre 2</a>
-          </div>
-        </li>
         <li class="nav-item" data-page="positionnement">Positionnement</li>
         <li class="nav-item" data-page="podcast">Podcast</li>
       </ul>
@@ -1069,8 +1055,8 @@ const tarifsPageTemplate = `
         <div class="seances-grid">
           <div class="seance-tarif">
             <h3>Séance voir clair en soi</h3>
-            <p class="tarif-price">60 €</p>
-            <p class="tarif-duration">1 h</p>
+            <p class="tarif-price">80 €</p>
+            <p class="tarif-duration">1 h 15</p>
           </div>
           <div class="seance-tarif">
             <h3>Séance de Reiki</h3>
