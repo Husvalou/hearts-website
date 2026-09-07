@@ -234,6 +234,53 @@ const mariaPageTemplate = `
   ${footerTemplate}
 `
 
+const tarifsSeancesTemplate = `
+    <section class="tarifs-seances">
+      <div class="tarifs-seances-content">
+        <h2>Tarifs séances</h2>
+        <div class="seances-grid">
+          <div class="seance-tarif">
+            <h3>Séance voir clair en soi</h3>
+            <p class="tarif-price">80 €</p>
+            <p class="tarif-duration">1 h 15</p>
+          </div>
+          <div class="seance-tarif">
+            <h3>Séance de Reiki</h3>
+            <p class="tarif-price">80 €</p>
+            <p class="tarif-duration">1 h 15</p>
+          </div>
+          <div class="seance-tarif">
+            <h3>Lecture des mémoires akashiques</h3>
+            <p class="tarif-price">80 €</p>
+            <p class="tarif-duration">1 h 15</p>
+          </div>
+          <div class="seance-tarif">
+            <h3>Reprogrammation des mémoires cellulaires</h3>
+            <p class="tarif-price">80 €</p>
+            <p class="tarif-duration">1 h 15</p>
+          </div>
+        </div>
+      </div>
+    </section>
+`
+
+function createSeanceTarifTemplate(title: string, price: string = '80 €', duration: string = '1 h 15') {
+  return `
+    <section class="tarifs-seances">
+      <div class="tarifs-seances-content">
+        <h2>TARIF DE LA SÉANCE</h2>
+        <div class="seance-tarif-single">
+          <div class="seance-tarif">
+            <h3>${title}</h3>
+            <p class="tarif-price">${price}</p>
+            <p class="tarif-duration">${duration}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  `
+}
+
 const voirClairPageTemplate = `
   ${headerTemplate}
 
@@ -282,6 +329,8 @@ const voirClairPageTemplate = `
         </ul>
       </div>
     </section>
+
+    ${createSeanceTarifTemplate('Séance voir clair en soi')}
   </main>
 
   ${footerTemplate}
@@ -327,6 +376,8 @@ const memoiresAkashiquesPageTemplate = `
         </ul>
       </div>
     </section>
+
+    ${createSeanceTarifTemplate('Lecture des mémoires akashiques')}
   </main>
 
   ${footerTemplate}
@@ -404,6 +455,8 @@ const reikiPageTemplate = `
         </ul>
       </div>
     </section>
+
+    ${createSeanceTarifTemplate('Séance de Reiki')}
   </main>
 
   ${footerTemplate}
@@ -466,6 +519,8 @@ const reprogrammationPageTemplate = `
         </ul>
       </div>
     </section>
+
+    ${createSeanceTarifTemplate('Reprogrammation des mémoires cellulaires')}
   </main>
 
   ${footerTemplate}
@@ -1049,33 +1104,7 @@ const tarifsPageTemplate = `
       </div>
     </section>
 
-    <section class="tarifs-seances">
-      <div class="seances-content">
-        <h2>Tarifs séances</h2>
-        <div class="seances-grid">
-          <div class="seance-tarif">
-            <h3>Séance voir clair en soi</h3>
-            <p class="tarif-price">80 €</p>
-            <p class="tarif-duration">1 h 15</p>
-          </div>
-          <div class="seance-tarif">
-            <h3>Séance de Reiki</h3>
-            <p class="tarif-price">80 €</p>
-            <p class="tarif-duration">1 h 15</p>
-          </div>
-          <div class="seance-tarif">
-            <h3>Lecture des mémoires akashiques</h3>
-            <p class="tarif-price">80 €</p>
-            <p class="tarif-duration">1 h 15</p>
-          </div>
-          <div class="seance-tarif">
-            <h3>Reprogrammation des mémoires cellulaires</h3>
-            <p class="tarif-price">80 €</p>
-            <p class="tarif-duration">1 h 15</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    ${tarifsSeancesTemplate}
   </main>
 
   ${footerTemplate}

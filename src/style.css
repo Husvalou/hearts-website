@@ -794,22 +794,32 @@ h1 {
 
 .tarifs-seances {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 3rem auto 0 auto;
 }
 
-.seances-content {
+.tarifs-seances-content {
   background: #ffffff;
   border-radius: 16px;
   padding: 2rem 2.5rem;
   box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
 }
 
-.seances-content h2 {
+.tarifs-seances-content h2 {
   font-family: 'Playfair Display', serif;
   font-size: 1.4rem;
   margin: 0 0 1.5rem 0;
   color: #1a1a1a;
   font-weight: 700;
+}
+
+.seance-tarif-single {
+  display: flex;
+  justify-content: center;
+}
+
+.seance-tarif-single .seance-tarif {
+  max-width: 320px;
+  width: 100%;
 }
 
 .seances-grid {
