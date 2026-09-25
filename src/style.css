@@ -864,6 +864,231 @@ h1 {
   margin: 0;
 }
 
+.seance-booking-button {
+  background: linear-gradient(135deg, #c9a35a 0%, #b8931f 100%);
+  border: 0;
+  border-radius: 9px;
+  box-shadow: 0 4px 12px rgba(184, 147, 31, 0.24);
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin: 1.5rem auto 0;
+  max-width: 360px;
+  min-height: 50px;
+  padding: 0.85rem 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+.seance-booking-button:hover,
+.seance-booking-button:focus-visible {
+  box-shadow: 0 7px 18px rgba(184, 147, 31, 0.34);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+/* Page réservation */
+.booking-page {
+  min-height: 70vh;
+  background: linear-gradient(180deg, #f7f3ea 0, #ffffff 360px);
+  padding: 3.5rem 2rem 4rem;
+}
+
+.booking-back,
+.booking-hero,
+.booking-grid,
+.booking-note {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.booking-back {
+  margin-bottom: 2.5rem;
+}
+
+.booking-hero {
+  text-align: center;
+  margin-bottom: 2.75rem;
+}
+
+.booking-eyebrow,
+.booking-format {
+  color: #a67f1a;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+.booking-eyebrow {
+  margin: 0 0 0.75rem;
+}
+
+.booking-hero h1 {
+  color: #1a1a1a;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0 0 1rem;
+}
+
+.booking-hero > p:last-child {
+  color: #5a5a5a;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.booking-card {
+  background: #fff;
+  border: 1px solid #e6dfd2;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(65, 51, 30, 0.08);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.booking-card-featured {
+  border-top: 4px solid #c9a35a;
+}
+
+.booking-format {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+}
+
+.booking-card h2 {
+  color: #28211a;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.45rem;
+  line-height: 1.35;
+  margin: 0 0 1.25rem;
+}
+
+.booking-details {
+  align-items: baseline;
+  border-top: 1px solid #eee8df;
+  border-bottom: 1px solid #eee8df;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.booking-price,
+.booking-duration {
+  font-family: 'Open Sans', Arial, sans-serif;
+  margin: 0;
+}
+
+.booking-price {
+  color: #a67f1a;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.booking-price span {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.booking-duration {
+  color: #606060;
+  font-size: 0.95rem;
+}
+
+.booking-description {
+  color: #5a5a5a;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 0.94rem;
+  line-height: 1.7;
+  margin: 1.4rem 0 1.75rem;
+}
+
+.booking-button {
+  align-items: center;
+  background: linear-gradient(135deg, #c9a35a 0%, #b8931f 100%);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(184, 147, 31, 0.22);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  justify-content: center;
+  margin-top: auto;
+  min-height: 48px;
+  padding: 0.8rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.booking-button:hover {
+  box-shadow: 0 7px 18px rgba(184, 147, 31, 0.32);
+  transform: translateY(-2px);
+}
+
+.booking-button-secondary {
+  background: #fff;
+  border: 1px solid #c9a35a;
+  box-shadow: none;
+  color: #8b6b21;
+}
+
+.booking-button-pending {
+  opacity: 0.78;
+}
+
+.booking-note {
+  color: #6b6258;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  margin-top: 1.75rem;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .booking-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 600px) {
+  .seance-booking-button {
+    font-size: 0.88rem;
+    min-height: 52px;
+  }
+
+  .booking-page {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .booking-back {
+    margin-bottom: 2rem;
+  }
+
+  .booking-card {
+    padding: 1.5rem;
+  }
+}
+
 /* Page "Podcast" */
 
 .podcast-page {

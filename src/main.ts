@@ -2,6 +2,14 @@ import './style.css'
 
 const app = document.querySelector<HTMLDivElement>('#app')!
 
+declare global {
+  interface Window {
+    BrevoBookingPage?: {
+      initStaticButton: (options: { url: string }) => void
+    }
+  }
+}
+
 const headerTemplate = `
   <header class="header">
     <div class="logo-container" data-page="home">
@@ -16,10 +24,10 @@ const headerTemplate = `
       <ul class="nav-menu">
         <li class="nav-item" data-page="maria">Maria HUIZAR</li>
         <li class="nav-item dropdown">
-          <span class="dropdown-trigger">Séances</span>
+          <span class="dropdown-trigger">Séances et formations</span>
           <div class="dropdown-content">
-            <a href="#" data-page="voir-clair">Voir Clair en Soi</a>
-            <a href="#" data-page="memoires-akashiques">Mémoires Akashiques</a>
+            <a href="#" data-page="voir-clair">Voir clair en soi</a>
+            <a href="#" data-page="memoires-akashiques">Lectures Akashiques</a>
             <a href="#" data-page="reiki">Séances de Reiki</a>
             <a href="#" data-page="reprogrammation">Reprogrammation des Mémoires Cellulaires</a>
           </div>
@@ -35,6 +43,7 @@ const headerTemplate = `
         </li>
         <li class="nav-item" data-page="positionnement">Positionnement</li>
         <li class="nav-item" data-page="podcast">Podcast</li>
+        <li class="nav-item nav-booking" data-page="reserver">Réserver une séance</li>
       </ul>
     </nav>
     <div class="mobile-menu-overlay"></div>
@@ -264,7 +273,17 @@ const tarifsSeancesTemplate = `
     </section>
 `
 
-function createSeanceTarifTemplate(title: string, price: string = '80 €', duration: string = '1 h 15') {
+function createSeanceTarifTemplate(
+  title: string,
+  price: string = '80 €',
+  duration: string = '1 h 15',
+  bookingLabel?: string,
+  bookingType?: 'voir-clair' | 'akashiques',
+) {
+  const bookingButton = bookingLabel && bookingType
+    ? `<button class="seance-booking-button" type="button" data-brevo-meeting="${bookingType}">${bookingLabel}</button>`
+    : ''
+
   return `
     <section class="tarifs-seances">
       <div class="tarifs-seances-content">
@@ -274,6 +293,7 @@ function createSeanceTarifTemplate(title: string, price: string = '80 €', dura
             <h3>${title}</h3>
             <p class="tarif-price">${price}</p>
             <p class="tarif-duration">${duration}</p>
+            ${bookingButton}
           </div>
         </div>
       </div>
@@ -322,15 +342,15 @@ const voirClairPageTemplate = `
       <div class="cadre-content">
         <h2>CADRE DES SÉANCES</h2>
         <ul>
-          <li>Séances individuelles</li>
-          <li>En présentiel ou à distance</li>
+          <li>Séance individuelle</li>
+          <li>En visioconférence</li>
           <li>Sur rendez-vous</li>
           <li>Cadre confidentiel et respectueux</li>
         </ul>
       </div>
     </section>
 
-    ${createSeanceTarifTemplate('Séance voir clair en soi')}
+    ${createSeanceTarifTemplate('Séance Voir clair en soi', '80 € TTC', '1 h 15', 'RÉSERVER MA SÉANCE', 'voir-clair')}
   </main>
 
   ${footerTemplate}
@@ -369,15 +389,15 @@ const memoiresAkashiquesPageTemplate = `
       <div class="cadre-content">
         <h2>CADRE DES SÉANCES</h2>
         <ul>
-          <li>Séances individuelles</li>
-          <li>En présentiel ou à distance</li>
+          <li>Séance individuelle</li>
+          <li>En visioconférence</li>
           <li>Sur rendez-vous</li>
           <li>Cadre confidentiel et respectueux</li>
         </ul>
       </div>
     </section>
 
-    ${createSeanceTarifTemplate('Lecture des mémoires akashiques')}
+    ${createSeanceTarifTemplate('Lecture Akashique', '80 € TTC', '1 h 15', 'RÉSERVER MA LECTURE', 'akashiques')}
   </main>
 
   ${footerTemplate}
@@ -1110,6 +1130,71 @@ const tarifsPageTemplate = `
   ${footerTemplate}
 `
 
+// URLs des deux types de rendez-vous intégrés par le script pop-up officiel de Brevo.
+const brevoMeetingUrls = {
+  voirClair: 'https://meet.brevo.com/heart-resonance-mariahuizar/borderless?l=seance-voir-clair',
+  akashiques: 'https://meet.brevo.com/heart-resonance-mariahuizar/borderless?l=lecture-akashique-en-visioconference',
+} as const
+
+function brevoBookingButton(label: string, meeting: keyof typeof brevoMeetingUrls) {
+  return `<button class="booking-button" type="button" data-brevo-meeting="${meeting}">${label}</button>`
+}
+
+const reserverPageTemplate = `
+  ${headerTemplate}
+
+  <main class="booking-page">
+    <div class="booking-back">
+      <button class="btn-back-home" data-page="home">← Retour à l'accueil</button>
+    </div>
+
+    <section class="booking-hero">
+      <p class="booking-eyebrow">PRISE DE RENDEZ-VOUS</p>
+      <h1>RÉSERVER UNE SÉANCE</h1>
+      <p>Choisissez votre séance, votre créneau, puis réglez directement en ligne.</p>
+    </section>
+
+    <section class="booking-grid" aria-label="Prestations à réserver">
+      <article class="booking-card booking-card-featured">
+        <span class="booking-format">EN VISIOCONFÉRENCE</span>
+        <h2>Séance Voir clair en soi</h2>
+        <div class="booking-details">
+          <p class="booking-price">80 € <span>TTC</span></p>
+          <p class="booking-duration">1 h 15</p>
+        </div>
+        <p class="booking-description">Un temps pour éclairer ce qui se joue et retrouver une lecture plus juste de votre situation.</p>
+        ${brevoBookingButton('Choisir mon créneau et payer', 'voirClair')}
+      </article>
+
+      <article class="booking-card booking-card-featured">
+        <span class="booking-format">EN VISIOCONFÉRENCE</span>
+        <h2>Lecture des mémoires akashiques</h2>
+        <div class="booking-details">
+          <p class="booking-price">80 € <span>TTC</span></p>
+          <p class="booking-duration">1 h 15</p>
+        </div>
+        <p class="booking-description">Une lecture pour poser un autre regard sur ce qui demande à être compris avec plus de clarté.</p>
+        ${brevoBookingButton('Choisir mon créneau et payer', 'akashiques')}
+      </article>
+
+      <article class="booking-card">
+        <span class="booking-format">SUR RENDEZ-VOUS</span>
+        <h2>Séance de Reiki</h2>
+        <div class="booking-details">
+          <p class="booking-price">80 € <span>TTC</span></p>
+          <p class="booking-duration">1 h 15</p>
+        </div>
+        <p class="booking-description">Une séance énergétique réalisée dans un cadre attentif, respectueux de votre rythme.</p>
+        <a class="booking-button booking-button-secondary" href="mailto:heart.resonance.mariahuizar@gmail.com?subject=Demande%20de%20r%C3%A9servation%20%E2%80%93%20S%C3%A9ance%20de%20Reiki">Demander un rendez-vous</a>
+      </article>
+    </section>
+
+    <p class="booking-note">Pour les séances en visioconférence, la réservation et le règlement sont réalisés sur la page sécurisée Brevo.</p>
+  </main>
+
+  ${footerTemplate}
+`
+
 const podcastPageTemplate = `
   ${headerTemplate}
 
@@ -1273,6 +1358,15 @@ const positionnementPageTemplate = `
 
   ${footerTemplate}
 `
+
+function openBrevoMeeting(meeting: keyof typeof brevoMeetingUrls) {
+  if (!window.BrevoBookingPage) {
+    window.alert('Le module de réservation est en cours de chargement. Veuillez réessayer dans un instant.')
+    return
+  }
+
+  window.BrevoBookingPage.initStaticButton({ url: brevoMeetingUrls[meeting] })
+}
 
 const cgvPageTemplate = `
   ${headerTemplate}
@@ -1535,7 +1629,7 @@ const privacyPageTemplate = `
   ${footerTemplate}
 `
 
-type Page = 'home' | 'maria' | 'seances' | 'voir-clair' | 'memoires-akashiques' | 'reiki' | 'reprogrammation' | 'tarifs' | 'reiki-usui' | 'memoires-akashiques-formations' | 'canalisation' | 'ateliers' | 'atelier-1' | 'atelier-2' | 'livres' | 'livre-1' | 'livre-2' | 'podcast' | 'cgv' | 'privacy' | 'mentions' | 'positionnement'
+type Page = 'home' | 'maria' | 'seances' | 'voir-clair' | 'memoires-akashiques' | 'reiki' | 'reprogrammation' | 'tarifs' | 'reiki-usui' | 'memoires-akashiques-formations' | 'canalisation' | 'ateliers' | 'atelier-1' | 'atelier-2' | 'livres' | 'livre-1' | 'livre-2' | 'podcast' | 'reserver' | 'cgv' | 'privacy' | 'mentions' | 'positionnement'
 
 function render(page: Page) {
   // reset animation
@@ -1583,6 +1677,8 @@ function render(page: Page) {
     app.innerHTML = mentionsPageTemplate
   } else if (page === 'positionnement') {
     app.innerHTML = positionnementPageTemplate
+  } else if (page === 'reserver') {
+    app.innerHTML = reserverPageTemplate
   } else {
     app.innerHTML = podcastPageTemplate
   }
@@ -1642,6 +1738,21 @@ function attachNavigation() {
   positionnementItem?.addEventListener('click', (event) => {
     event.preventDefault()
     render('positionnement')
+  })
+
+  const bookingItem = document.querySelector<HTMLElement>('.nav-item[data-page="reserver"]')
+  bookingItem?.addEventListener('click', (event) => {
+    event.preventDefault()
+    render('reserver')
+  })
+
+  const brevoBookingButtons = document.querySelectorAll<HTMLButtonElement>('[data-brevo-meeting]')
+  brevoBookingButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const meeting = button.dataset.brevoMeeting
+      if (meeting === 'voir-clair') openBrevoMeeting('voirClair')
+      if (meeting === 'akashiques') openBrevoMeeting('akashiques')
+    })
   })
 
   // Mobile menu functionality
