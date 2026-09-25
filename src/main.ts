@@ -1750,7 +1750,7 @@ function attachNavigation() {
   brevoBookingButtons.forEach(button => {
     button.addEventListener('click', () => {
       const meeting = button.dataset.brevoMeeting
-      if (meeting === 'voir-clair') openBrevoMeeting('voirClair')
+      if (meeting === 'voir-clair' || meeting === 'voirClair') openBrevoMeeting('voirClair')
       if (meeting === 'akashiques') openBrevoMeeting('akashiques')
     })
   })
